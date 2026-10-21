@@ -1,0 +1,491 @@
+{
+  "count": 600,
+  "seed": 42,
+  "generated_at": "2026-10-13T22:22:36.419010+00:00",
+  "duration_ms": 1810,
+  "extractor": "Gold annotated assertions (extraction isolated)",
+  "vector_representation": "sparse TF-IDF cosine; not dense semantic embeddings",
+  "answer_engine": "shared evidence template (no LLM)",
+  "limitations": [
+    "Gold inputs isolate policy and retrieval; this is not a measurement of natural-language extraction.",
+    "Synthetic controlled set, not an external blind benchmark.",
+    "Evidence-template answering; live LLM results are reported separately.",
+    "FIR covers gold preserved facts in stable/additive/temporary scenarios; missing extraction is counted separately.",
+    "Recall denominator excludes no-evidence answers; missing expected evidence counts as a miss.",
+    "Latency is in-process elapsed time including SQLite reads; no network or LLM costs.",
+    "No-temporal ablation removes lifecycle filters and penalties; no-graph removes graph weight only."
+  ],
+  "metrics": {
+    "recent": {
+      "answer_accuracy": 0.75,
+      "smer": 0.1875,
+      "recall_at_5": 1.0,
+      "mrr": 0.9117647058823529,
+      "mean_latency_ms": 0.2121,
+      "p95_latency_ms": 0.25,
+      "mean_context_tokens_estimate": 22.610000000000113,
+      "instances": 600,
+      "evolved_questions": 480,
+      "stale_answers": 90
+    },
+    "vector": {
+      "answer_accuracy": 0.25,
+      "smer": 0.8125,
+      "recall_at_5": 1.0,
+      "mrr": 0.6862745098039214,
+      "mean_latency_ms": 0.199,
+      "p95_latency_ms": 0.24,
+      "mean_context_tokens_estimate": 22.610000000000113,
+      "instances": 600,
+      "evolved_questions": 480,
+      "stale_answers": 390
+    },
+    "graph": {
+      "answer_accuracy": 0.25,
+      "smer": 0.8125,
+      "recall_at_5": 1.0,
+      "mrr": 0.6862745098039214,
+      "mean_latency_ms": 0.19481666666666667,
+      "p95_latency_ms": 0.23,
+      "mean_context_tokens_estimate": 22.610000000000113,
+      "instances": 600,
+      "evolved_questions": 480,
+      "stale_answers": 390
+    },
+    "hybrid": {
+      "answer_accuracy": 1.0,
+      "smer": 0.0,
+      "recall_at_5": 1.0,
+      "mrr": 1.0,
+      "mean_latency_ms": 0.17898333333333333,
+      "p95_latency_ms": 0.21,
+      "mean_context_tokens_estimate": 14.430500000000011,
+      "instances": 600,
+      "evolved_questions": 480,
+      "stale_answers": 0
+    },
+    "hybrid_no_temporal": {
+      "answer_accuracy": 0.25,
+      "smer": 0.8125,
+      "recall_at_5": 1.0,
+      "mrr": 0.6862745098039214,
+      "mean_latency_ms": 0.19483333333333333,
+      "p95_latency_ms": 0.23,
+      "mean_context_tokens_estimate": 22.610000000000113,
+      "instances": 600,
+      "evolved_questions": 480,
+      "stale_answers": 390
+    },
+    "hybrid_no_graph": {
+      "answer_accuracy": 1.0,
+      "smer": 0.0,
+      "recall_at_5": 1.0,
+      "mrr": 1.0,
+      "mean_latency_ms": 0.1777,
+      "p95_latency_ms": 0.21,
+      "mean_context_tokens_estimate": 14.430500000000011,
+      "instances": 600,
+      "evolved_questions": 480,
+      "stale_answers": 0
+    }
+  },
+  "extraction": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 1260,
+    "fp": 0,
+    "fn": 0
+  },
+  "reconciliation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "per_label": {
+      "SAME": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 30
+      },
+      "SUPPORTS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 30
+      },
+      "UPDATES": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 60
+      },
+      "CONTRADICTS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 60
+      },
+      "SUPERSEDES": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 300
+      },
+      "UNRELATED": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 780
+      }
+    },
+    "confusion": {
+      "SAME": {
+        "SAME": 30
+      },
+      "SUPPORTS": {
+        "SUPPORTS": 30
+      },
+      "UPDATES": {
+        "UPDATES": 60
+      },
+      "CONTRADICTS": {
+        "CONTRADICTS": 60
+      },
+      "SUPERSEDES": {
+        "SUPERSEDES": 300
+      },
+      "UNRELATED": {
+        "UNRELATED": 780
+      }
+    }
+  },
+  "false_invalidation": {
+    "rate": 0.0,
+    "retired": 0,
+    "considered": 180
+  },
+  "gate": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "categories": {
+    "stable": {
+      "recent": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "graph": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 60
+      }
+    },
+    "preference": {
+      "recent": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "vector": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "graph": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 60
+      }
+    },
+    "location": {
+      "recent": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "vector": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "graph": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 60
+      }
+    },
+    "correction": {
+      "recent": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "vector": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "graph": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 60
+      }
+    },
+    "cancellation": {
+      "recent": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "vector": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "graph": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 60
+      }
+    },
+    "replacement": {
+      "recent": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "vector": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "graph": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 60
+      }
+    },
+    "temporary": {
+      "recent": {
+        "accuracy": 0.5,
+        "n": 60
+      },
+      "vector": {
+        "accuracy": 0.5,
+        "n": 60
+      },
+      "graph": {
+        "accuracy": 0.5,
+        "n": 60
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 0.5,
+        "n": 60
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 60
+      }
+    },
+    "additive": {
+      "recent": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "graph": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 60
+      }
+    },
+    "rename": {
+      "recent": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "vector": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "graph": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 60
+      }
+    },
+    "ambiguous": {
+      "recent": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "vector": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "graph": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 60
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 0.0,
+        "n": 60
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 60
+      }
+    }
+  },
+  "splits": {
+    "template": {
+      "recent": {
+        "accuracy": 0.75,
+        "n": 480
+      },
+      "vector": {
+        "accuracy": 0.25,
+        "n": 480
+      },
+      "graph": {
+        "accuracy": 0.25,
+        "n": 480
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 480
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 0.25,
+        "n": 480
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 480
+      }
+    },
+    "challenge": {
+      "recent": {
+        "accuracy": 0.75,
+        "n": 120
+      },
+      "vector": {
+        "accuracy": 0.25,
+        "n": 120
+      },
+      "graph": {
+        "accuracy": 0.25,
+        "n": 120
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 120
+      },
+      "hybrid_no_temporal": {
+        "accuracy": 0.25,
+        "n": 120
+      },
+      "hybrid_no_graph": {
+        "accuracy": 1.0,
+        "n": 120
+      }
+    }
+  },
+  "failures": [],
+  "suite": "policy",
+  "title": "Gold-assertion policy and retrieval"
+}

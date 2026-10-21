@@ -1,0 +1,35 @@
+{
+  "name": "amnesia-memory-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "vite --host 127.0.0.1",
+    "dev:api": "python3 -m backend.server",
+    "build": "tsc -b && vite build",
+    "start": "python3 -m backend.server --production",
+    "test": "python3 -m unittest discover -s tests -v && node --test tests/review-retry.test.mjs",
+    "evaluate": "python3 -m backend.evaluate --gold --count 600 --output output/evaluation-policy.json",
+    "review": "node scripts/review.mjs",
+    "doctor": "python3 -m backend.doctor",
+    "evaluate:ai": "python3 -m backend.quality --questions 60",
+    "models:start": "OLLAMA_HOST=127.0.0.1:11435 OLLAMA_NO_CLOUD=1 OLLAMA_NOPRUNE=1 ollama serve",
+    "package:review": "python3 scripts/package_review.py"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.2.8",
+    "@fontsource-variable/manrope": "^5.2.8",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}

@@ -1,0 +1,20 @@
+
+> amnesia-memory-lab@1.0.0 build
+> tsc -b && vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 1590 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                              0.67 kB │ gzip:  0.40 kB
+dist/assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2    8.52 kB
+dist/assets/manrope-greek-wght-normal-DL7QRZyv.woff2         9.44 kB
+dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2     14.50 kB
+dist/assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2    15.12 kB
+dist/assets/dm-sans-latin-ext-wght-normal-BOFOeGcA.woff2    18.23 kB
+dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2        24.84 kB
+dist/assets/dm-sans-latin-wght-normal-Xz1IZZA0.woff2        36.93 kB
+dist/assets/index-sI-UxgWw.css                              54.43 kB │ gzip: 14.94 kB
+dist/assets/index-iB8KlU1e.js                              309.26 kB │ gzip: 93.70 kB
+✓ built in 1.14s

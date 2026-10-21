@@ -1,0 +1,376 @@
+AMNESIA
+An Evolving Knowledge Graph Agent for Long-Term AI Memory
+
+
+Prepared by
+Abhilaksh Chauhan
+Domain
+Ai Memory Systems
+Review
+Review 1
+Institute
+Vellore Institute of Technology (VIT)
+
+
+
+Core Research Question
+Can an evolving knowledge graph help AI agents remember the most up-to-date information across long conversations?
+
+
+
+Executive Summary
+
+
+Large language models can reason over information placed inside their context window, but persistent long-term interaction introduces a harder problem: facts change. A user can move to a new city, revise a plan, replace a device, change a preference, or correct an earlier statement. Conventional vector-memory systems may retrieve both the stale and current versions because both remain semantically relevant.
+Amnesia is proposed as a long-term memory agent that converts conversational events into an evolving knowledge graph. Each memory is represented as structured evidence with entities, relations, time, provenance, and status. When new information arrives, a reconciliation layer determines whether it duplicates, supports, updates, contradicts, or supersedes an existing memory. Retrieval then combines semantic relevance, graph structure, temporal validity, and reconciliation state before supplying context to an LLM.
+The academic scope deliberately focuses on the research kernel rather than a complete commercial memory platform. The project will compare conventional vector retrieval, graph-only retrieval, and the proposed contradiction-aware temporal approach using multi-session conversations that contain stable facts, updates, corrections, temporary states, and supersession. Evaluation will include retrieval quality, contradiction classification, answer accuracy, stale-memory error rate, and false invalidation rate.
+Review 1 Status
+This report defines the problem, research gap, novelty, dataset protocol, architecture, baselines, and evaluation plan.
+
+
+1. Problem Statement
+
+
+Current LLM-based assistants are increasingly expected to operate across long-running conversations and repeated user interactions. Because the entire interaction history cannot always remain in the active context window, external memory systems commonly store conversation chunks or extracted facts and retrieve them when a future query appears relevant.
+The core limitation is that semantic relevance does not guarantee temporal correctness. Older and newer memories about the same subject can both be highly similar to a query even when only one remains valid. This creates stale-memory failures in which an agent recalls a fact that was once correct but has since been updated, corrected, cancelled, or superseded.
+Example
+Session 1: “I live in Hyderabad.”  →  Session 8: “I moved to Chennai.”  →  Query: “Where do I live now?”
+A similarity-only memory store may retrieve both statements. Amnesia should preserve both as history while marking Chennai as the currently valid belief.
+
+
+The project therefore studies long-term memory as an evolving state-management problem rather than only a storage-and-retrieval problem.
+2. Objectives
+
+
+Design a structured memory representation that captures entities, relations, temporal validity, provenance, confidence, and memory state.
+Extract candidate facts and relations from multi-session natural-language conversations.
+Classify the relationship between incoming and existing memories as duplicate, supporting, updating, contradictory, superseding, or unrelated.
+Maintain an evolving knowledge graph in which outdated facts remain historically traceable but are not treated as current state.
+Develop a hybrid retrieval method that combines semantic similarity, graph relevance, temporal validity, and reconciliation status.
+Optionally use a memory-necessity gate to avoid unnecessary retrieval for queries that do not depend on long-term personal or session-specific information.
+Evaluate the proposed method against conventional baselines using retrieval, classification, temporal consistency, answer-quality, and efficiency metrics.
+3. Literature Survey
+
+
+Long-term memory for LLM agents has progressed from storing raw interaction traces toward hierarchical memory, reflective memory, graph-based retrieval, and temporal context graphs. The following works establish the primary technical context for Amnesia.
+Work
+Memory mechanism
+Strength
+Relevance / remaining gap
+Generative Agents [1]
+Natural-language memory stream with recency, importance, relevance, reflection
+Demonstrates persistent experience and reflective synthesis
+Not designed primarily around explicit contradiction or supersession tracking
+MemGPT [2]
+Hierarchical / virtual context management across memory tiers
+Extends effective context for multi-session interaction
+Focuses on memory management and paging rather than a temporal knowledge-state model
+HippoRAG [3]
+Knowledge graph + Personalized PageRank for associative retrieval
+Strong multi-hop integration and efficient retrieval
+Primarily targets retrieval over accumulated knowledge rather than user-state evolution
+Zep / Graphiti [4]
+Temporally aware knowledge graph with historical relationships
+Directly addresses dynamic agent memory and temporal validity
+Shows temporal graphs are viable; leaves room for alternative reconciliation policies, task-specific evaluation, and safer update decisions
+Supersede [5]
+Benchmark / training environment focused on memory updates
+Isolates the memory-update gap and measures stale-value failures
+Motivates targeted methods for maintaining current facts as conversations grow
+
+
+The literature changes the novelty claim of this project in an important way: temporal knowledge graphs themselves are not new. Accordingly, Amnesia does not claim novelty merely from using a graph or timestamps. The project contribution is instead centered on a specific hybrid reconciliation and evaluation strategy for evolving conversational facts.
+4. Research Gap
+
+
+Existing memory approaches demonstrate strong retrieval and long-context behavior, while recent temporal-graph systems already preserve fact histories. However, the practical failure that matters for a conversational agent is narrower: deciding when a new statement should change the agent’s current belief without incorrectly deleting or invalidating unrelated facts.
+Similarity-based retrieval can surface mutually inconsistent memories because semantic closeness is agnostic to which fact is current.
+Knowledge-graph retrieval can organize relationships but does not automatically guarantee correct temporal updates.
+Temporal memory requires a reliable reconciliation decision: additive information, correction, contradiction, and supersession must be distinguished.
+Aggressive invalidation can create a second failure mode: a still-valid fact may be retired because a model incorrectly judges it as contradictory.
+Many evaluations emphasize retrieval accuracy; a project centered on evolving user state should explicitly measure stale-memory errors and false invalidations.
+Gap → Novelty
+Research gap: long-term memory systems need safer, explicit reasoning about how new facts relate to existing facts.
+Proposed novelty: a relation-aware reconciliation layer plus hybrid temporal retrieval, evaluated specifically on evolving multi-session facts and stale-memory failure modes.
+
+
+5. Proposed Novelty and Contributions
+
+
+The project proposes the following contribution set. The novelty is a hybrid method and experimental framing, not the generic use of an LLM or knowledge graph.
+Contribution
+Description
+1. Relation-aware reconciliation
+For each new assertion, jointly consider subject, relation, object, time, and candidate memories before deciding duplicate / support / update / contradict / supersede / unrelated.
+2. Explicit memory lifecycle
+Keep historical facts but attach current, superseded, invalid, or unresolved state rather than overwriting the past or treating all memories equally.
+3. Hybrid retrieval score
+Combine semantic relevance with graph relevance, temporal validity, confidence, and contradiction penalties.
+4. Evolving-memory benchmark slice
+Construct controlled multi-session scenarios containing corrections, renames, plan changes, temporary states, preference shifts, and ownership/location updates.
+5. Failure-oriented metrics
+Measure stale-memory error rate and false invalidation rate in addition to conventional retrieval and QA metrics.
+6. Memory necessity gate (optional)
+Classify whether a query needs long-term memory before retrieval, reducing irrelevant context, latency, and token cost.
+
+
+6. Dataset Design
+
+
+The proposed dataset is a synthetic and manually verifiable multi-session benchmark designed specifically for evolving conversational memory. Each scenario contains a sequence of user statements, one or more state changes, and one or more questions whose correct answer depends on temporal interpretation.
+Category
+Example
+Expected memory behavior
+Stable fact
+“My birthday is 14 May.”
+Remember without unnecessary updates
+Preference change
+“I prefer Python.” → “I now prefer Rust.”
+Use latest preference while preserving history
+Location update
+“I live in Hyderabad.” → “I moved to Chennai.”
+Supersede old current location
+Correction
+“Meeting is Tuesday.” → “Correction: Wednesday.”
+Treat second statement as correction
+Cancellation
+“I will visit Mumbai.” → “The trip is cancelled.”
+Do not retrieve cancelled plan as active
+Replacement / ownership
+“I use an iPhone.” → “I sold it and bought a Pixel.”
+Retire old ownership state
+Temporary state
+“I am in Delhi this week.”
+Respect bounded validity
+Additive fact
+“I work at X.” + “I lead project Y.”
+Do not falsely invalidate compatible facts
+Rename
+“My dog is Bruno.” → “We renamed him Milo.”
+Track identity with updated label
+Ambiguous conflict
+Two incompatible claims with weak evidence
+Preserve unresolved conflict rather than force certainty
+
+
+Target scale for the first evaluation is approximately 500-2,000 question-answer instances, balanced across change types. Each instance should include gold labels for the currently valid fact, the relation between new and prior memories, and the evidence session(s) required to answer correctly.
+7. Proposed Architecture
+
+
+
+Figure 1. Proposed Amnesia research architecture.
+7.1 Memory Extraction
+An LLM or structured extraction model converts each conversation event into candidate assertions such as (subject, relation, object), with source evidence, timestamp, confidence, and optional validity hints.
+7.2 Entity and Relation Resolution
+New entities and relations are matched against the existing graph to reduce duplicates and preserve identity across paraphrases, renamed objects, and repeated mentions.
+7.3 Evolving Temporal Knowledge Graph
+The graph stores entities as nodes and factual assertions as time-aware edges. Historical facts are preserved even after they stop being current. The model therefore represents both present state and how that state evolved.
+7.4 Reconciliation Engine
+For each incoming assertion, candidate existing memories are compared and labeled as SAME, SUPPORTS, UPDATES, CONTRADICTS, SUPERSEDES, or UNRELATED. Structural constraints can restrict invalidation to semantically compatible subject-relation scopes.
+7.5 Hybrid Retrieval
+Candidate memories are ranked using semantic similarity, graph relevance, temporal validity, confidence, and penalties for superseded or contradicted state. The goal is to deliver concise current context rather than a pile of loosely similar memories.
+7.6 Memory Necessity Gate
+Before retrieval, an optional classifier predicts whether the user query actually depends on long-term memory. Generic questions can bypass memory, while personal or cross-session questions activate retrieval.
+A candidate retrieval score can be expressed as:
+Score(m, q) = α·Semantic + β·Graph + γ·Temporal + δ·Confidence − ε·StalenessPenalty
+7.7 Proposed Memory Record
+Field
+Purpose
+subject_id
+Resolved entity that the fact concerns
+relation
+Typed relation such as lives_in, prefers, owns, plans_to
+object_id / value
+Entity or literal value connected to the subject
+valid_from / valid_until
+World-time interval in which the fact is considered valid
+observed_at
+Time at which the system received the evidence
+source / evidence
+Conversation turn or event that supports the assertion
+confidence
+Estimated reliability / extraction confidence
+status
+active, superseded, invalid, or unresolved
+superseded_by
+Link to the newer assertion that replaced the fact
+
+
+8. Current Implementation Status
+
+
+The current review does not require the entire project to be complete. The following table separates design work already specified in this report from implementation and experimental work that still needs to be verified in code.
+Component
+Review 1 status
+Notes
+Problem formulation and scope
+Defined
+Research question and project boundary established
+Literature survey
+Defined
+Core memory, graph, and update-gap works identified
+Research gap and novelty
+Defined
+Relation-aware reconciliation + failure-oriented evaluation
+Memory schema
+Designed
+Temporal, provenance, confidence, and lifecycle fields specified
+Dataset taxonomy
+Designed
+Ten evolution / conflict categories specified
+Extraction module
+Pending
+Structured assertion extraction pipeline
+Graph storage
+Implemented
+Entity / fact persistence and temporal updates
+Reconciliation classifier
+Pending
+Six-way relation classification and update policy
+Hybrid retriever
+Pending
+Semantic + graph + time ranking
+Evaluation experiments
+Pending
+Baselines, ablations, metrics, and analysis
+Interactive demo
+Pending
+Visual graph evolution and question answering
+
+
+9. Evaluation Metrics and Experimental Design
+
+
+Evaluation is structured so that every project objective maps to a measurable outcome. The central comparison is whether an evolving, reconciled memory reduces stale answers without causing excessive false invalidations.
+Objective
+Metric
+What it measures
+Memory extraction
+Precision, Recall, F1
+Correctness of extracted assertions against gold facts
+Reconciliation
+Accuracy / Macro-F1
+Classification across same, support, update, contradict, supersede, unrelated
+Retrieval
+Recall@K, MRR
+Whether required supporting memories are ranked highly
+Temporal correctness
+Stale Memory Error Rate (SMER)
+Fraction of evolved-fact questions answered using an outdated value
+Update safety
+False Invalidation Rate (FIR)
+Fraction of still-valid facts incorrectly retired by reconciliation
+End-to-end QA
+Exact / semantic answer accuracy
+Correctness of final answers using retrieved context
+Memory gate
+Precision, Recall, F1
+Correct prediction of whether long-term memory is needed
+Efficiency
+Latency, retrieved tokens, context size
+Operational overhead of memory retrieval
+
+
+
+Proposed failure-oriented metrics:
+SMER = stale answers / questions involving evolved facts
+FIR = valid facts incorrectly invalidated / valid facts considered for invalidation
+9.1 Baselines
+System
+Description
+Baseline A - Full / recent conversation context
+No explicit external reconciliation; answer from available history
+Baseline B - Vector RAG memory
+Top-k embedding similarity over stored memories
+Baseline C - Graph retrieval
+Graph-organized facts without the full Amnesia reconciliation/ranking policy
+Proposed - Amnesia
+Temporal graph + explicit reconciliation + hybrid ranking (+ optional memory gate)
+
+
+Results Status
+Empirical values are pending implementation. Review 1 should report only verified measurements. The final report should include per-category results, aggregate results, baseline comparison, and ablation studies.
+
+
+10. Demonstration Plan
+
+
+The final prototype demo should make memory evolution visible rather than only displaying a chatbot response. A simple research interface is sufficient.
+Step
+Demo action
+Expected output
+1
+User enters an initial fact
+“I live in Hyderabad.”
+2
+Memory extraction
+Graph adds user —lives_in→ Hyderabad as active
+3
+User updates the fact
+“I moved to Chennai.”
+4
+Reconciliation
+Hyderabad is retained as history and marked superseded; Chennai becomes active
+5
+User asks a cross-session question
+“Where do I live now?”
+6
+Retrieval visualization
+Show candidate memories, scores, and status filters
+7
+Answer
+LLM responds from the current reconciled fact: Chennai
+
+
+A second demo should deliberately test additive information so the system proves it can avoid over-invalidation. For example, “I work at Company X” followed by “I lead Project Y” should preserve both facts rather than treating the second as a replacement.
+11. Remaining Work
+
+
+Phase
+Work
+Phase 1
+Build dataset generator / annotation format and create initial gold scenarios
+Phase 2
+Implement structured memory extraction and entity resolution
+Phase 3
+Implement temporal graph persistence and memory lifecycle state
+Phase 4
+Implement reconciliation classifier and safe update / invalidation rules
+Phase 5
+Implement vector, graph, and hybrid retrieval baselines
+Phase 6
+Run evaluation, error analysis, and ablation studies
+Phase 7
+Build compact visual demo and prepare final report / paper
+
+
+12. Expected Outcome and Scope Boundaries
+
+
+The expected outcome is a working AI research prototype that demonstrates contradiction-aware long-term memory over multi-session conversations and provides a measurable comparison against conventional retrieval baselines. The strongest academic outcome would be a reproducible benchmark plus experimental evidence showing where reconciliation helps and where it fails.
+12.1 Included in Academic Scope
+Structured conversational memory extraction
+Temporal knowledge graph representation
+Contradiction / supersession reconciliation
+Hybrid memory retrieval
+Benchmark dataset and gold labels
+Baseline comparison and evaluation metrics
+Research-oriented interactive demonstration
+12.2 Explicitly Out of Scope
+Multi-tenant enterprise SaaS infrastructure, billing, authentication, and full developer platform
+Slack, Gmail, Google Drive, and other production connectors
+Company-wide permission / governance systems and large-scale distributed graph infrastructure
+Consumer-facing personal memory application
+13. References
+
+
+[1] J. S. Park, J. O’Brien, C. J. Cai, M. R. Morris, P. Liang, and M. S. Bernstein, “Generative Agents: Interactive Simulacra of Human Behavior,” Proc. ACM UIST, 2023. doi: 10.1145/3586183.3606763.
+[2] C. Packer, S. Wooders, K. Lin, V. Fang, S. G. Patil, I. Stoica, and J. E. Gonzalez, “MemGPT: Towards LLMs as Operating Systems,” arXiv:2310.08560, 2023.
+[3] B. J. Gutiérrez, Y. Shu, Y. Gu, M. Yasunaga, and Y. Su, “HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models,” arXiv:2405.14831, 2024.
+[4] P. Rasmussen, P. Paliychuk, T. Beauvais, J. Ryan, and D. Chalef, “Zep: A Temporal Knowledge Graph Architecture for Agent Memory,” arXiv:2501.13956, 2025.
+[5] V. Patel, “Supersede: Diagnosing and Training the Memory-Update Gap in LLM Agents,” arXiv:2606.27472, 2026.
+[6] Course Project Brief, “AI-based Research or Innovation Project - Project Scope, Novelty Requirement, Requirements and Evaluation Criteria,” 2026.
+Project Positioning
+Amnesia is not “a chatbot with memory.” The research prototype tests whether an AI agent can maintain an evolving representation of what is currently true while retaining the evidence and history of what used to be true.
+
+

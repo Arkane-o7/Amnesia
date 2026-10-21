@@ -1,0 +1,2778 @@
+{
+  "suite": "live_ai",
+  "title": "Curated natural-language end-to-end AI",
+  "count": 20,
+  "cases": 10,
+  "seed": 42,
+  "generated_at": "2026-10-14T07:04:38.076254+00:00",
+  "duration_ms": 610373,
+  "engine": {
+    "provider": "codex",
+    "chat_model": "gpt-5.6-sol",
+    "embedding_model": "nomic-embed-text:latest",
+    "ollama_url": "http://127.0.0.1:11435",
+    "reconciliation": "policy",
+    "temperature": null,
+    "reasoning_effort": "low"
+  },
+  "metrics": {
+    "context": {
+      "answer_accuracy": 0.95,
+      "smer": 0.0,
+      "recall_at_5": 0.95,
+      "mrr": 0.5291666666666667,
+      "mean_latency_ms": 6581.617,
+      "p95_latency_ms": 7655.23,
+      "mean_context_tokens_estimate": 61.977999999999994,
+      "instances": 20,
+      "evolved_questions": 7,
+      "stale_answers": 0,
+      "errors": 0
+    },
+    "vector": {
+      "answer_accuracy": 0.95,
+      "smer": 0.0,
+      "recall_at_5": 0.9,
+      "mrr": 0.875,
+      "mean_latency_ms": 6891.4525,
+      "p95_latency_ms": 9112.61,
+      "mean_context_tokens_estimate": 34.846000000000004,
+      "instances": 20,
+      "evolved_questions": 7,
+      "stale_answers": 0,
+      "errors": 0
+    },
+    "graph": {
+      "answer_accuracy": 0.9,
+      "smer": 0.0,
+      "recall_at_5": 0.9,
+      "mrr": 0.8,
+      "mean_latency_ms": 2583.672,
+      "p95_latency_ms": 7688.89,
+      "mean_context_tokens_estimate": 34.846000000000004,
+      "instances": 20,
+      "evolved_questions": 7,
+      "stale_answers": 0,
+      "errors": 0
+    },
+    "hybrid": {
+      "answer_accuracy": 1.0,
+      "smer": 0.0,
+      "recall_at_5": 0.95,
+      "mrr": 0.925,
+      "mean_latency_ms": 6104.8315,
+      "p95_latency_ms": 7937.12,
+      "mean_context_tokens_estimate": 23.806999999999995,
+      "instances": 20,
+      "evolved_questions": 7,
+      "stale_answers": 0,
+      "errors": 0
+    }
+  },
+  "retrieval_k": 3,
+  "extractor": "gpt-5.6-sol",
+  "vector_representation": "nomic-embed-text:latest",
+  "answer_engine": "same live LLM for all methods",
+  "extraction": {
+    "precision": 0.9333333333333333,
+    "recall": 0.9333333333333333,
+    "f1": 0.9333333333333333,
+    "tp": 28,
+    "fp": 2,
+    "fn": 2
+  },
+  "reconciliation": {
+    "accuracy": 0.9333333333333333,
+    "macro_f1": 0.9728997289972899,
+    "per_label": {
+      "SAME": {
+        "precision": 0,
+        "recall": 0,
+        "f1": 0,
+        "support": 0
+      },
+      "SUPPORTS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 2
+      },
+      "UPDATES": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "CONTRADICTS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "SUPERSEDES": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889,
+        "support": 5
+      },
+      "UNRELATED": {
+        "precision": 1.0,
+        "recall": 0.9523809523809523,
+        "f1": 0.975609756097561,
+        "support": 21
+      }
+    },
+    "confusion": {
+      "SAME": {},
+      "SUPPORTS": {
+        "SUPPORTS": 2
+      },
+      "UPDATES": {
+        "UPDATES": 1
+      },
+      "CONTRADICTS": {
+        "CONTRADICTS": 1
+      },
+      "SUPERSEDES": {
+        "SUPERSEDES": 4,
+        "MISSING": 1
+      },
+      "UNRELATED": {
+        "UNRELATED": 20,
+        "MISSING": 1
+      }
+    }
+  },
+  "false_invalidation": {
+    "rate": 0.0,
+    "retired": 0,
+    "considered": 11
+  },
+  "gate": null,
+  "categories": {
+    "stable": {
+      "context": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "graph": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 2
+      }
+    },
+    "preference": {
+      "context": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "graph": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 2
+      }
+    },
+    "location": {
+      "context": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "graph": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 2
+      }
+    },
+    "correction": {
+      "context": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "graph": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 2
+      }
+    },
+    "cancellation": {
+      "context": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "graph": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 2
+      }
+    },
+    "replacement": {
+      "context": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "vector": {
+        "accuracy": 0.5,
+        "n": 2
+      },
+      "graph": {
+        "accuracy": 0.5,
+        "n": 2
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 2
+      }
+    },
+    "temporary": {
+      "context": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "graph": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 2
+      }
+    },
+    "additive": {
+      "context": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "graph": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 2
+      }
+    },
+    "rename": {
+      "context": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "graph": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 2
+      }
+    },
+    "ambiguous": {
+      "context": {
+        "accuracy": 0.5,
+        "n": 2
+      },
+      "vector": {
+        "accuracy": 1.0,
+        "n": 2
+      },
+      "graph": {
+        "accuracy": 0.5,
+        "n": 2
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 2
+      }
+    }
+  },
+  "splits": {
+    "curated": {
+      "context": {
+        "accuracy": 0.95,
+        "n": 20
+      },
+      "vector": {
+        "accuracy": 0.95,
+        "n": 20
+      },
+      "graph": {
+        "accuracy": 0.9,
+        "n": 20
+      },
+      "hybrid": {
+        "accuracy": 1.0,
+        "n": 20
+      }
+    }
+  },
+  "failures": [],
+  "records": [
+    {
+      "id": "natural-stable-1-q1",
+      "category": "stable",
+      "method": "context",
+      "turns": [
+        "For your notes, my birthday falls on 14 May. I work for Meridian.",
+        "Just confirming that my birthday is still 14 May."
+      ],
+      "question": "When is my birthday?",
+      "expected": "14 May",
+      "actual": "14 May",
+      "answer": "Your birthday is 14 May.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [],
+      "latency_ms": 5926.71,
+      "error": null
+    },
+    {
+      "id": "natural-stable-1-q1",
+      "category": "stable",
+      "method": "vector",
+      "turns": [
+        "For your notes, my birthday falls on 14 May. I work for Meridian.",
+        "Just confirming that my birthday is still 14 May."
+      ],
+      "question": "When is my birthday?",
+      "expected": "14 May",
+      "actual": "14 May",
+      "answer": "Your birthday is 14 May.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "2349a68f1ab24307"
+      ],
+      "latency_ms": 7052.34,
+      "error": null
+    },
+    {
+      "id": "natural-stable-1-q1",
+      "category": "stable",
+      "method": "graph",
+      "turns": [
+        "For your notes, my birthday falls on 14 May. I work for Meridian.",
+        "Just confirming that my birthday is still 14 May."
+      ],
+      "question": "When is my birthday?",
+      "expected": "14 May",
+      "actual": "14 May",
+      "answer": "Your birthday is 14 May.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "2349a68f1ab24307"
+      ],
+      "latency_ms": 0.5,
+      "error": null
+    },
+    {
+      "id": "natural-stable-1-q1",
+      "category": "stable",
+      "method": "hybrid",
+      "turns": [
+        "For your notes, my birthday falls on 14 May. I work for Meridian.",
+        "Just confirming that my birthday is still 14 May."
+      ],
+      "question": "When is my birthday?",
+      "expected": "14 May",
+      "actual": "14 May",
+      "answer": "Your birthday is on 14 May.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "2349a68f1ab24307"
+      ],
+      "latency_ms": 8250.62,
+      "error": null
+    },
+    {
+      "id": "natural-stable-1-q2",
+      "category": "stable",
+      "method": "context",
+      "turns": [
+        "For your notes, my birthday falls on 14 May. I work for Meridian.",
+        "Just confirming that my birthday is still 14 May."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "2349a68f1ab24307",
+        "447671cf354f4b04"
+      ],
+      "latency_ms": 6768.94,
+      "error": null
+    },
+    {
+      "id": "natural-stable-1-q2",
+      "category": "stable",
+      "method": "vector",
+      "turns": [
+        "For your notes, my birthday falls on 14 May. I work for Meridian.",
+        "Just confirming that my birthday is still 14 May."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work for Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "447671cf354f4b04"
+      ],
+      "latency_ms": 5455.38,
+      "error": null
+    },
+    {
+      "id": "natural-stable-1-q2",
+      "category": "stable",
+      "method": "graph",
+      "turns": [
+        "For your notes, my birthday falls on 14 May. I work for Meridian.",
+        "Just confirming that my birthday is still 14 May."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work for Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "447671cf354f4b04"
+      ],
+      "latency_ms": 0.59,
+      "error": null
+    },
+    {
+      "id": "natural-stable-1-q2",
+      "category": "stable",
+      "method": "hybrid",
+      "turns": [
+        "For your notes, my birthday falls on 14 May. I work for Meridian.",
+        "Just confirming that my birthday is still 14 May."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "447671cf354f4b04"
+      ],
+      "latency_ms": 5294.59,
+      "error": null
+    },
+    {
+      "id": "natural-preference-1-q1",
+      "category": "preference",
+      "method": "context",
+      "turns": [
+        "My preferred programming language is Python. Coffee is my favourite drink.",
+        "I've switched to Rust as my preferred programming language. My drink preference hasn't changed."
+      ],
+      "question": "Which programming language do I prefer now?",
+      "expected": "Rust",
+      "actual": "Rust",
+      "answer": "You now prefer Rust.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "87b427ace33b438c"
+      ],
+      "latency_ms": 7655.23,
+      "error": null
+    },
+    {
+      "id": "natural-preference-1-q1",
+      "category": "preference",
+      "method": "vector",
+      "turns": [
+        "My preferred programming language is Python. Coffee is my favourite drink.",
+        "I've switched to Rust as my preferred programming language. My drink preference hasn't changed."
+      ],
+      "question": "Which programming language do I prefer now?",
+      "expected": "Rust",
+      "actual": "Rust",
+      "answer": "You now prefer Rust.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "87b427ace33b438c"
+      ],
+      "latency_ms": 7401.66,
+      "error": null
+    },
+    {
+      "id": "natural-preference-1-q1",
+      "category": "preference",
+      "method": "graph",
+      "turns": [
+        "My preferred programming language is Python. Coffee is my favourite drink.",
+        "I've switched to Rust as my preferred programming language. My drink preference hasn't changed."
+      ],
+      "question": "Which programming language do I prefer now?",
+      "expected": "Rust",
+      "actual": "Rust",
+      "answer": "You now prefer Rust.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "87b427ace33b438c"
+      ],
+      "latency_ms": 0.69,
+      "error": null
+    },
+    {
+      "id": "natural-preference-1-q1",
+      "category": "preference",
+      "method": "hybrid",
+      "turns": [
+        "My preferred programming language is Python. Coffee is my favourite drink.",
+        "I've switched to Rust as my preferred programming language. My drink preference hasn't changed."
+      ],
+      "question": "Which programming language do I prefer now?",
+      "expected": "Rust",
+      "actual": "Rust",
+      "answer": "You currently prefer Rust.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "87b427ace33b438c"
+      ],
+      "latency_ms": 6579.86,
+      "error": null
+    },
+    {
+      "id": "natural-preference-1-q2",
+      "category": "preference",
+      "method": "context",
+      "turns": [
+        "My preferred programming language is Python. Coffee is my favourite drink.",
+        "I've switched to Rust as my preferred programming language. My drink preference hasn't changed."
+      ],
+      "question": "What drink do I prefer?",
+      "expected": "coffee",
+      "actual": "Coffee",
+      "answer": "Your preferred drink is coffee.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "5c53218ea8a54575",
+        "efdba60bccaa41f6",
+        "87b427ace33b438c"
+      ],
+      "latency_ms": 6797.78,
+      "error": null
+    },
+    {
+      "id": "natural-preference-1-q2",
+      "category": "preference",
+      "method": "vector",
+      "turns": [
+        "My preferred programming language is Python. Coffee is my favourite drink.",
+        "I've switched to Rust as my preferred programming language. My drink preference hasn't changed."
+      ],
+      "question": "What drink do I prefer?",
+      "expected": "coffee",
+      "actual": "Coffee",
+      "answer": "You prefer coffee.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "efdba60bccaa41f6"
+      ],
+      "latency_ms": 6176.11,
+      "error": null
+    },
+    {
+      "id": "natural-preference-1-q2",
+      "category": "preference",
+      "method": "graph",
+      "turns": [
+        "My preferred programming language is Python. Coffee is my favourite drink.",
+        "I've switched to Rust as my preferred programming language. My drink preference hasn't changed."
+      ],
+      "question": "What drink do I prefer?",
+      "expected": "coffee",
+      "actual": "Coffee",
+      "answer": "You prefer coffee.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "efdba60bccaa41f6"
+      ],
+      "latency_ms": 5646.49,
+      "error": null
+    },
+    {
+      "id": "natural-preference-1-q2",
+      "category": "preference",
+      "method": "hybrid",
+      "turns": [
+        "My preferred programming language is Python. Coffee is my favourite drink.",
+        "I've switched to Rust as my preferred programming language. My drink preference hasn't changed."
+      ],
+      "question": "What drink do I prefer?",
+      "expected": "coffee",
+      "actual": "Coffee",
+      "answer": "You prefer coffee.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "efdba60bccaa41f6"
+      ],
+      "latency_ms": 6353.87,
+      "error": null
+    },
+    {
+      "id": "natural-location-1-q1",
+      "category": "location",
+      "method": "context",
+      "turns": [
+        "Home for me is Hyderabad. I'm employed by Meridian.",
+        "I've relocated to Chennai; that's my permanent home now."
+      ],
+      "question": "Which city is my permanent home now?",
+      "expected": "Chennai",
+      "actual": "Chennai",
+      "answer": "Your permanent home is now Chennai.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "e6d1a01c87754d9f"
+      ],
+      "latency_ms": 6989.32,
+      "error": null
+    },
+    {
+      "id": "natural-location-1-q1",
+      "category": "location",
+      "method": "vector",
+      "turns": [
+        "Home for me is Hyderabad. I'm employed by Meridian.",
+        "I've relocated to Chennai; that's my permanent home now."
+      ],
+      "question": "Which city is my permanent home now?",
+      "expected": "Chennai",
+      "actual": "Chennai",
+      "answer": "Your permanent home is now Chennai.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "e6d1a01c87754d9f"
+      ],
+      "latency_ms": 6669.49,
+      "error": null
+    },
+    {
+      "id": "natural-location-1-q1",
+      "category": "location",
+      "method": "graph",
+      "turns": [
+        "Home for me is Hyderabad. I'm employed by Meridian.",
+        "I've relocated to Chennai; that's my permanent home now."
+      ],
+      "question": "Which city is my permanent home now?",
+      "expected": "Chennai",
+      "actual": "Chennai",
+      "answer": "Your permanent home is now Chennai.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "e6d1a01c87754d9f"
+      ],
+      "latency_ms": 0.77,
+      "error": null
+    },
+    {
+      "id": "natural-location-1-q1",
+      "category": "location",
+      "method": "hybrid",
+      "turns": [
+        "Home for me is Hyderabad. I'm employed by Meridian.",
+        "I've relocated to Chennai; that's my permanent home now."
+      ],
+      "question": "Which city is my permanent home now?",
+      "expected": "Chennai",
+      "actual": "Chennai",
+      "answer": "Your permanent home is Chennai.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "e6d1a01c87754d9f"
+      ],
+      "latency_ms": 6205.93,
+      "error": null
+    },
+    {
+      "id": "natural-location-1-q2",
+      "category": "location",
+      "method": "context",
+      "turns": [
+        "Home for me is Hyderabad. I'm employed by Meridian.",
+        "I've relocated to Chennai; that's my permanent home now."
+      ],
+      "question": "Where do I work?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "f3d49abc0114418f",
+        "5931a123b6e144a3"
+      ],
+      "latency_ms": 6516.13,
+      "error": null
+    },
+    {
+      "id": "natural-location-1-q2",
+      "category": "location",
+      "method": "vector",
+      "turns": [
+        "Home for me is Hyderabad. I'm employed by Meridian.",
+        "I've relocated to Chennai; that's my permanent home now."
+      ],
+      "question": "Where do I work?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "5931a123b6e144a3"
+      ],
+      "latency_ms": 9544.45,
+      "error": null
+    },
+    {
+      "id": "natural-location-1-q2",
+      "category": "location",
+      "method": "graph",
+      "turns": [
+        "Home for me is Hyderabad. I'm employed by Meridian.",
+        "I've relocated to Chennai; that's my permanent home now."
+      ],
+      "question": "Where do I work?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "5931a123b6e144a3"
+      ],
+      "latency_ms": 7688.89,
+      "error": null
+    },
+    {
+      "id": "natural-location-1-q2",
+      "category": "location",
+      "method": "hybrid",
+      "turns": [
+        "Home for me is Hyderabad. I'm employed by Meridian.",
+        "I've relocated to Chennai; that's my permanent home now."
+      ],
+      "question": "Where do I work?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "5931a123b6e144a3"
+      ],
+      "latency_ms": 6123.83,
+      "error": null
+    },
+    {
+      "id": "natural-correction-1-q1",
+      "category": "correction",
+      "method": "context",
+      "turns": [
+        "Please remember: my meeting is scheduled for Tuesday. I work at Meridian.",
+        "I gave you the wrong meeting day earlier. The correct day is Wednesday."
+      ],
+      "question": "What day is my meeting?",
+      "expected": "Wednesday",
+      "actual": "Wednesday",
+      "answer": "Your meeting is on Wednesday.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "d213c0b4e21247fc"
+      ],
+      "latency_ms": 7432.73,
+      "error": null
+    },
+    {
+      "id": "natural-correction-1-q1",
+      "category": "correction",
+      "method": "vector",
+      "turns": [
+        "Please remember: my meeting is scheduled for Tuesday. I work at Meridian.",
+        "I gave you the wrong meeting day earlier. The correct day is Wednesday."
+      ],
+      "question": "What day is my meeting?",
+      "expected": "Wednesday",
+      "actual": "Wednesday",
+      "answer": "Your meeting is on Wednesday.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "d213c0b4e21247fc"
+      ],
+      "latency_ms": 7550.43,
+      "error": null
+    },
+    {
+      "id": "natural-correction-1-q1",
+      "category": "correction",
+      "method": "graph",
+      "turns": [
+        "Please remember: my meeting is scheduled for Tuesday. I work at Meridian.",
+        "I gave you the wrong meeting day earlier. The correct day is Wednesday."
+      ],
+      "question": "What day is my meeting?",
+      "expected": "Wednesday",
+      "actual": "Wednesday",
+      "answer": "Your meeting is on Wednesday.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "d213c0b4e21247fc"
+      ],
+      "latency_ms": 0.76,
+      "error": null
+    },
+    {
+      "id": "natural-correction-1-q1",
+      "category": "correction",
+      "method": "hybrid",
+      "turns": [
+        "Please remember: my meeting is scheduled for Tuesday. I work at Meridian.",
+        "I gave you the wrong meeting day earlier. The correct day is Wednesday."
+      ],
+      "question": "What day is my meeting?",
+      "expected": "Wednesday",
+      "actual": "Wednesday",
+      "answer": "Your meeting is on Wednesday.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "d213c0b4e21247fc"
+      ],
+      "latency_ms": 7937.12,
+      "error": null
+    },
+    {
+      "id": "natural-correction-1-q2",
+      "category": "correction",
+      "method": "context",
+      "turns": [
+        "Please remember: my meeting is scheduled for Tuesday. I work at Meridian.",
+        "I gave you the wrong meeting day earlier. The correct day is Wednesday."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "601c19c1cbda4063",
+        "530635f735534a4a"
+      ],
+      "latency_ms": 6256.02,
+      "error": null
+    },
+    {
+      "id": "natural-correction-1-q2",
+      "category": "correction",
+      "method": "vector",
+      "turns": [
+        "Please remember: my meeting is scheduled for Tuesday. I work at Meridian.",
+        "I gave you the wrong meeting day earlier. The correct day is Wednesday."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "530635f735534a4a"
+      ],
+      "latency_ms": 5252.04,
+      "error": null
+    },
+    {
+      "id": "natural-correction-1-q2",
+      "category": "correction",
+      "method": "graph",
+      "turns": [
+        "Please remember: my meeting is scheduled for Tuesday. I work at Meridian.",
+        "I gave you the wrong meeting day earlier. The correct day is Wednesday."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "530635f735534a4a"
+      ],
+      "latency_ms": 0.64,
+      "error": null
+    },
+    {
+      "id": "natural-correction-1-q2",
+      "category": "correction",
+      "method": "hybrid",
+      "turns": [
+        "Please remember: my meeting is scheduled for Tuesday. I work at Meridian.",
+        "I gave you the wrong meeting day earlier. The correct day is Wednesday."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "530635f735534a4a"
+      ],
+      "latency_ms": 6166.48,
+      "error": null
+    },
+    {
+      "id": "natural-cancellation-1-q1",
+      "category": "cancellation",
+      "method": "context",
+      "turns": [
+        "I'm planning a trip to Hyderabad. My employer is Meridian.",
+        "I've called off the trip to Hyderabad. It isn't happening."
+      ],
+      "question": "Do I have an active trip planned?",
+      "expected": null,
+      "actual": null,
+      "answer": "Your trip to Hyderabad was cancelled; no active trip is stored.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "b3e282e3a685486f"
+      ],
+      "latency_ms": 6929.23,
+      "error": null
+    },
+    {
+      "id": "natural-cancellation-1-q1",
+      "category": "cancellation",
+      "method": "vector",
+      "turns": [
+        "I'm planning a trip to Hyderabad. My employer is Meridian.",
+        "I've called off the trip to Hyderabad. It isn't happening."
+      ],
+      "question": "Do I have an active trip planned?",
+      "expected": null,
+      "actual": null,
+      "answer": "Your trip to Hyderabad was cancelled; no active trip is planned.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "b3e282e3a685486f"
+      ],
+      "latency_ms": 7535.33,
+      "error": null
+    },
+    {
+      "id": "natural-cancellation-1-q1",
+      "category": "cancellation",
+      "method": "graph",
+      "turns": [
+        "I'm planning a trip to Hyderabad. My employer is Meridian.",
+        "I've called off the trip to Hyderabad. It isn't happening."
+      ],
+      "question": "Do I have an active trip planned?",
+      "expected": null,
+      "actual": null,
+      "answer": "Your trip to Hyderabad was cancelled; no active trip is planned.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "b3e282e3a685486f"
+      ],
+      "latency_ms": 4887.96,
+      "error": null
+    },
+    {
+      "id": "natural-cancellation-1-q1",
+      "category": "cancellation",
+      "method": "hybrid",
+      "turns": [
+        "I'm planning a trip to Hyderabad. My employer is Meridian.",
+        "I've called off the trip to Hyderabad. It isn't happening."
+      ],
+      "question": "Do I have an active trip planned?",
+      "expected": null,
+      "actual": null,
+      "answer": "Your trip to Hyderabad was cancelled; no active trip is stored.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "b3e282e3a685486f"
+      ],
+      "latency_ms": 6783.01,
+      "error": null
+    },
+    {
+      "id": "natural-cancellation-1-q2",
+      "category": "cancellation",
+      "method": "context",
+      "turns": [
+        "I'm planning a trip to Hyderabad. My employer is Meridian.",
+        "I've called off the trip to Hyderabad. It isn't happening."
+      ],
+      "question": "Where do I work?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work for Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "d5b112d2270146b0",
+        "2ec935fca3504bba"
+      ],
+      "latency_ms": 5088.5,
+      "error": null
+    },
+    {
+      "id": "natural-cancellation-1-q2",
+      "category": "cancellation",
+      "method": "vector",
+      "turns": [
+        "I'm planning a trip to Hyderabad. My employer is Meridian.",
+        "I've called off the trip to Hyderabad. It isn't happening."
+      ],
+      "question": "Where do I work?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "2ec935fca3504bba"
+      ],
+      "latency_ms": 6504.87,
+      "error": null
+    },
+    {
+      "id": "natural-cancellation-1-q2",
+      "category": "cancellation",
+      "method": "graph",
+      "turns": [
+        "I'm planning a trip to Hyderabad. My employer is Meridian.",
+        "I've called off the trip to Hyderabad. It isn't happening."
+      ],
+      "question": "Where do I work?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "2ec935fca3504bba"
+      ],
+      "latency_ms": 5710.54,
+      "error": null
+    },
+    {
+      "id": "natural-cancellation-1-q2",
+      "category": "cancellation",
+      "method": "hybrid",
+      "turns": [
+        "I'm planning a trip to Hyderabad. My employer is Meridian.",
+        "I've called off the trip to Hyderabad. It isn't happening."
+      ],
+      "question": "Where do I work?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "2ec935fca3504bba"
+      ],
+      "latency_ms": 6244.76,
+      "error": null
+    },
+    {
+      "id": "natural-replacement-1-q1",
+      "category": "replacement",
+      "method": "context",
+      "turns": [
+        "My current phone is an iPhone. I also own a MacBook.",
+        "I've sold the iPhone and replaced it with a Pixel."
+      ],
+      "question": "Which phone do I use now?",
+      "expected": "Pixel",
+      "actual": "Pixel",
+      "answer": "You now use a Pixel.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "5a2f7b1d0eff4fca",
+        "c356782355e44ea9"
+      ],
+      "latency_ms": 6591.18,
+      "error": null
+    },
+    {
+      "id": "natural-replacement-1-q1",
+      "category": "replacement",
+      "method": "vector",
+      "turns": [
+        "My current phone is an iPhone. I also own a MacBook.",
+        "I've sold the iPhone and replaced it with a Pixel."
+      ],
+      "question": "Which phone do I use now?",
+      "expected": "Pixel",
+      "actual": null,
+      "answer": "You sold the iPhone; no current phone is known.",
+      "correct": false,
+      "stale": false,
+      "used_ids": [
+        "5a2f7b1d0eff4fca"
+      ],
+      "latency_ms": 5753.06,
+      "error": null
+    },
+    {
+      "id": "natural-replacement-1-q1",
+      "category": "replacement",
+      "method": "graph",
+      "turns": [
+        "My current phone is an iPhone. I also own a MacBook.",
+        "I've sold the iPhone and replaced it with a Pixel."
+      ],
+      "question": "Which phone do I use now?",
+      "expected": "Pixel",
+      "actual": "Pixel",
+      "answer": "You now use a Pixel.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "5a2f7b1d0eff4fca",
+        "c356782355e44ea9"
+      ],
+      "latency_ms": 6424.73,
+      "error": null
+    },
+    {
+      "id": "natural-replacement-1-q1",
+      "category": "replacement",
+      "method": "hybrid",
+      "turns": [
+        "My current phone is an iPhone. I also own a MacBook.",
+        "I've sold the iPhone and replaced it with a Pixel."
+      ],
+      "question": "Which phone do I use now?",
+      "expected": "Pixel",
+      "actual": "Pixel",
+      "answer": "You use a Pixel now.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "c356782355e44ea9"
+      ],
+      "latency_ms": 4927.69,
+      "error": null
+    },
+    {
+      "id": "natural-replacement-1-q2",
+      "category": "replacement",
+      "method": "context",
+      "turns": [
+        "My current phone is an iPhone. I also own a MacBook.",
+        "I've sold the iPhone and replaced it with a Pixel."
+      ],
+      "question": "Which laptop do I own?",
+      "expected": "MacBook",
+      "actual": "MacBook",
+      "answer": "You own a MacBook.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "b109352ae232491e",
+        "424e46ada27e44ef"
+      ],
+      "latency_ms": 6624.38,
+      "error": null
+    },
+    {
+      "id": "natural-replacement-1-q2",
+      "category": "replacement",
+      "method": "vector",
+      "turns": [
+        "My current phone is an iPhone. I also own a MacBook.",
+        "I've sold the iPhone and replaced it with a Pixel."
+      ],
+      "question": "Which laptop do I own?",
+      "expected": "MacBook",
+      "actual": "MacBook",
+      "answer": "You own a MacBook.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "424e46ada27e44ef"
+      ],
+      "latency_ms": 5603.74,
+      "error": null
+    },
+    {
+      "id": "natural-replacement-1-q2",
+      "category": "replacement",
+      "method": "graph",
+      "turns": [
+        "My current phone is an iPhone. I also own a MacBook.",
+        "I've sold the iPhone and replaced it with a Pixel."
+      ],
+      "question": "Which laptop do I own?",
+      "expected": "MacBook",
+      "actual": null,
+      "answer": "I do not know which laptop you own.",
+      "correct": false,
+      "stale": false,
+      "used_ids": [],
+      "latency_ms": 6140.36,
+      "error": null
+    },
+    {
+      "id": "natural-replacement-1-q2",
+      "category": "replacement",
+      "method": "hybrid",
+      "turns": [
+        "My current phone is an iPhone. I also own a MacBook.",
+        "I've sold the iPhone and replaced it with a Pixel."
+      ],
+      "question": "Which laptop do I own?",
+      "expected": "MacBook",
+      "actual": "MacBook",
+      "answer": "You own a MacBook.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "424e46ada27e44ef"
+      ],
+      "latency_ms": 6824.07,
+      "error": null
+    },
+    {
+      "id": "natural-temporary-1-q1",
+      "category": "temporary",
+      "method": "context",
+      "turns": [
+        "I make my permanent home in Hyderabad.",
+        "I'm spending this week in Chennai, just for a temporary visit."
+      ],
+      "question": "Where is my permanent home?",
+      "expected": "Hyderabad",
+      "actual": "Hyderabad",
+      "answer": "Your permanent home is in Hyderabad.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "3c0035c75a33419b"
+      ],
+      "latency_ms": 5250.02,
+      "error": null
+    },
+    {
+      "id": "natural-temporary-1-q1",
+      "category": "temporary",
+      "method": "vector",
+      "turns": [
+        "I make my permanent home in Hyderabad.",
+        "I'm spending this week in Chennai, just for a temporary visit."
+      ],
+      "question": "Where is my permanent home?",
+      "expected": "Hyderabad",
+      "actual": "Hyderabad",
+      "answer": "Your permanent home is in Hyderabad.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "3c0035c75a33419b"
+      ],
+      "latency_ms": 5925.78,
+      "error": null
+    },
+    {
+      "id": "natural-temporary-1-q1",
+      "category": "temporary",
+      "method": "graph",
+      "turns": [
+        "I make my permanent home in Hyderabad.",
+        "I'm spending this week in Chennai, just for a temporary visit."
+      ],
+      "question": "Where is my permanent home?",
+      "expected": "Hyderabad",
+      "actual": "Hyderabad",
+      "answer": "Your permanent home is in Hyderabad.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "3c0035c75a33419b"
+      ],
+      "latency_ms": 0.61,
+      "error": null
+    },
+    {
+      "id": "natural-temporary-1-q1",
+      "category": "temporary",
+      "method": "hybrid",
+      "turns": [
+        "I make my permanent home in Hyderabad.",
+        "I'm spending this week in Chennai, just for a temporary visit."
+      ],
+      "question": "Where is my permanent home?",
+      "expected": "Hyderabad",
+      "actual": "Hyderabad",
+      "answer": "Your permanent home is in Hyderabad.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "3c0035c75a33419b"
+      ],
+      "latency_ms": 5925.12,
+      "error": null
+    },
+    {
+      "id": "natural-temporary-1-q2",
+      "category": "temporary",
+      "method": "context",
+      "turns": [
+        "I make my permanent home in Hyderabad.",
+        "I'm spending this week in Chennai, just for a temporary visit."
+      ],
+      "question": "Where am I staying temporarily this week?",
+      "expected": "Chennai",
+      "actual": "Chennai",
+      "answer": "You are staying temporarily in Chennai this week.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "77948fb732c34f74"
+      ],
+      "latency_ms": 6952.45,
+      "error": null
+    },
+    {
+      "id": "natural-temporary-1-q2",
+      "category": "temporary",
+      "method": "vector",
+      "turns": [
+        "I make my permanent home in Hyderabad.",
+        "I'm spending this week in Chennai, just for a temporary visit."
+      ],
+      "question": "Where am I staying temporarily this week?",
+      "expected": "Chennai",
+      "actual": "Chennai",
+      "answer": "You are staying temporarily in Chennai this week.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "77948fb732c34f74"
+      ],
+      "latency_ms": 8961.75,
+      "error": null
+    },
+    {
+      "id": "natural-temporary-1-q2",
+      "category": "temporary",
+      "method": "graph",
+      "turns": [
+        "I make my permanent home in Hyderabad.",
+        "I'm spending this week in Chennai, just for a temporary visit."
+      ],
+      "question": "Where am I staying temporarily this week?",
+      "expected": "Chennai",
+      "actual": "Chennai",
+      "answer": "You are staying temporarily in Chennai this week.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "77948fb732c34f74"
+      ],
+      "latency_ms": 0.91,
+      "error": null
+    },
+    {
+      "id": "natural-temporary-1-q2",
+      "category": "temporary",
+      "method": "hybrid",
+      "turns": [
+        "I make my permanent home in Hyderabad.",
+        "I'm spending this week in Chennai, just for a temporary visit."
+      ],
+      "question": "Where am I staying temporarily this week?",
+      "expected": "Chennai",
+      "actual": "Chennai",
+      "answer": "You are staying temporarily in Chennai this week.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "77948fb732c34f74"
+      ],
+      "latency_ms": 6788.45,
+      "error": null
+    },
+    {
+      "id": "natural-additive-1-q1",
+      "category": "additive",
+      "method": "context",
+      "turns": [
+        "I'm on the payroll at Meridian.",
+        "In addition to my job, I'm heading up Project Atlas."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "b2e22f922ca64a6f"
+      ],
+      "latency_ms": 6037.19,
+      "error": null
+    },
+    {
+      "id": "natural-additive-1-q1",
+      "category": "additive",
+      "method": "vector",
+      "turns": [
+        "I'm on the payroll at Meridian.",
+        "In addition to my job, I'm heading up Project Atlas."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "b2e22f922ca64a6f"
+      ],
+      "latency_ms": 5531.14,
+      "error": null
+    },
+    {
+      "id": "natural-additive-1-q1",
+      "category": "additive",
+      "method": "graph",
+      "turns": [
+        "I'm on the payroll at Meridian.",
+        "In addition to my job, I'm heading up Project Atlas."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "b2e22f922ca64a6f"
+      ],
+      "latency_ms": 0.55,
+      "error": null
+    },
+    {
+      "id": "natural-additive-1-q1",
+      "category": "additive",
+      "method": "hybrid",
+      "turns": [
+        "I'm on the payroll at Meridian.",
+        "In addition to my job, I'm heading up Project Atlas."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "b2e22f922ca64a6f"
+      ],
+      "latency_ms": 5470.78,
+      "error": null
+    },
+    {
+      "id": "natural-additive-1-q2",
+      "category": "additive",
+      "method": "context",
+      "turns": [
+        "I'm on the payroll at Meridian.",
+        "In addition to my job, I'm heading up Project Atlas."
+      ],
+      "question": "Which project do I lead?",
+      "expected": "Project Atlas",
+      "actual": "Project Atlas",
+      "answer": "You lead Project Atlas.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "49bc6ae010e9452d"
+      ],
+      "latency_ms": 5779.68,
+      "error": null
+    },
+    {
+      "id": "natural-additive-1-q2",
+      "category": "additive",
+      "method": "vector",
+      "turns": [
+        "I'm on the payroll at Meridian.",
+        "In addition to my job, I'm heading up Project Atlas."
+      ],
+      "question": "Which project do I lead?",
+      "expected": "Project Atlas",
+      "actual": "Project Atlas",
+      "answer": "You lead Project Atlas.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "49bc6ae010e9452d"
+      ],
+      "latency_ms": 8302.51,
+      "error": null
+    },
+    {
+      "id": "natural-additive-1-q2",
+      "category": "additive",
+      "method": "graph",
+      "turns": [
+        "I'm on the payroll at Meridian.",
+        "In addition to my job, I'm heading up Project Atlas."
+      ],
+      "question": "Which project do I lead?",
+      "expected": "Project Atlas",
+      "actual": "Project Atlas",
+      "answer": "You lead Project Atlas.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "49bc6ae010e9452d"
+      ],
+      "latency_ms": 0.62,
+      "error": null
+    },
+    {
+      "id": "natural-additive-1-q2",
+      "category": "additive",
+      "method": "hybrid",
+      "turns": [
+        "I'm on the payroll at Meridian.",
+        "In addition to my job, I'm heading up Project Atlas."
+      ],
+      "question": "Which project do I lead?",
+      "expected": "Project Atlas",
+      "actual": "Project Atlas",
+      "answer": "You lead Project Atlas.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "49bc6ae010e9452d"
+      ],
+      "latency_ms": 6271.28,
+      "error": null
+    },
+    {
+      "id": "natural-rename-1-q1",
+      "category": "rename",
+      "method": "context",
+      "turns": [
+        "We call my dog Bruno. I work at Meridian.",
+        "We've renamed my dog to Milo. It's the same dog, just a new name."
+      ],
+      "question": "What is my dog's current name?",
+      "expected": "Milo",
+      "actual": "Milo",
+      "answer": "Your dog's current name is Milo.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "e7e0ecc0aaf34ea9"
+      ],
+      "latency_ms": 7917.28,
+      "error": null
+    },
+    {
+      "id": "natural-rename-1-q1",
+      "category": "rename",
+      "method": "vector",
+      "turns": [
+        "We call my dog Bruno. I work at Meridian.",
+        "We've renamed my dog to Milo. It's the same dog, just a new name."
+      ],
+      "question": "What is my dog's current name?",
+      "expected": "Milo",
+      "actual": "Milo",
+      "answer": "Your dog's current name is Milo.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "e7e0ecc0aaf34ea9"
+      ],
+      "latency_ms": 9112.61,
+      "error": null
+    },
+    {
+      "id": "natural-rename-1-q1",
+      "category": "rename",
+      "method": "graph",
+      "turns": [
+        "We call my dog Bruno. I work at Meridian.",
+        "We've renamed my dog to Milo. It's the same dog, just a new name."
+      ],
+      "question": "What is my dog's current name?",
+      "expected": "Milo",
+      "actual": "Milo",
+      "answer": "Your dog's current name is Milo.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "e7e0ecc0aaf34ea9"
+      ],
+      "latency_ms": 7110.69,
+      "error": null
+    },
+    {
+      "id": "natural-rename-1-q1",
+      "category": "rename",
+      "method": "hybrid",
+      "turns": [
+        "We call my dog Bruno. I work at Meridian.",
+        "We've renamed my dog to Milo. It's the same dog, just a new name."
+      ],
+      "question": "What is my dog's current name?",
+      "expected": "Milo",
+      "actual": "Milo",
+      "answer": "Your dog's current name is Milo.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "e7e0ecc0aaf34ea9"
+      ],
+      "latency_ms": 6754.68,
+      "error": null
+    },
+    {
+      "id": "natural-rename-1-q2",
+      "category": "rename",
+      "method": "context",
+      "turns": [
+        "We call my dog Bruno. I work at Meridian.",
+        "We've renamed my dog to Milo. It's the same dog, just a new name."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "7b85084addb3479a",
+        "db964021e2f8484d"
+      ],
+      "latency_ms": 7537.51,
+      "error": null
+    },
+    {
+      "id": "natural-rename-1-q2",
+      "category": "rename",
+      "method": "vector",
+      "turns": [
+        "We call my dog Bruno. I work at Meridian.",
+        "We've renamed my dog to Milo. It's the same dog, just a new name."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "db964021e2f8484d"
+      ],
+      "latency_ms": 5625.18,
+      "error": null
+    },
+    {
+      "id": "natural-rename-1-q2",
+      "category": "rename",
+      "method": "graph",
+      "turns": [
+        "We call my dog Bruno. I work at Meridian.",
+        "We've renamed my dog to Milo. It's the same dog, just a new name."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "db964021e2f8484d"
+      ],
+      "latency_ms": 0.6,
+      "error": null
+    },
+    {
+      "id": "natural-rename-1-q2",
+      "category": "rename",
+      "method": "hybrid",
+      "turns": [
+        "We call my dog Bruno. I work at Meridian.",
+        "We've renamed my dog to Milo. It's the same dog, just a new name."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "You work at Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "db964021e2f8484d"
+      ],
+      "latency_ms": 5603.15,
+      "error": null
+    },
+    {
+      "id": "natural-ambiguous-1-q1",
+      "category": "ambiguous",
+      "method": "context",
+      "turns": [
+        "I live in Hyderabad. I work for Meridian.",
+        "I'm not certain, but I might be living in Chennai now. Please don't treat that as confirmed."
+      ],
+      "question": "Where do I live?",
+      "expected": "UNRESOLVED",
+      "actual": "Hyderabad",
+      "answer": "You live in Hyderabad; the later mention of Chennai was explicitly uncertain and unconfirmed.",
+      "correct": false,
+      "stale": false,
+      "used_ids": [
+        "639cf6270fbd4d9b",
+        "cc90e53d12784ab6",
+        "3c4739247b5e41e3"
+      ],
+      "latency_ms": 6364.03,
+      "error": null
+    },
+    {
+      "id": "natural-ambiguous-1-q1",
+      "category": "ambiguous",
+      "method": "vector",
+      "turns": [
+        "I live in Hyderabad. I work for Meridian.",
+        "I'm not certain, but I might be living in Chennai now. Please don't treat that as confirmed."
+      ],
+      "question": "Where do I live?",
+      "expected": "UNRESOLVED",
+      "actual": "UNRESOLVED",
+      "answer": "It is unclear whether you live in Hyderabad or may now be living in Chennai.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "3c4739247b5e41e3",
+        "639cf6270fbd4d9b"
+      ],
+      "latency_ms": 8317.37,
+      "error": null
+    },
+    {
+      "id": "natural-ambiguous-1-q1",
+      "category": "ambiguous",
+      "method": "graph",
+      "turns": [
+        "I live in Hyderabad. I work for Meridian.",
+        "I'm not certain, but I might be living in Chennai now. Please don't treat that as confirmed."
+      ],
+      "question": "Where do I live?",
+      "expected": "UNRESOLVED",
+      "actual": "Hyderabad",
+      "answer": "Your confirmed residence is Hyderabad; the later Chennai statement is uncertain.",
+      "correct": false,
+      "stale": false,
+      "used_ids": [
+        "639cf6270fbd4d9b",
+        "3c4739247b5e41e3"
+      ],
+      "latency_ms": 8055.91,
+      "error": null
+    },
+    {
+      "id": "natural-ambiguous-1-q1",
+      "category": "ambiguous",
+      "method": "hybrid",
+      "turns": [
+        "I live in Hyderabad. I work for Meridian.",
+        "I'm not certain, but I might be living in Chennai now. Please don't treat that as confirmed."
+      ],
+      "question": "Where do I live?",
+      "expected": "UNRESOLVED",
+      "actual": "UNRESOLVED",
+      "answer": "This is unresolved: the evidence includes Hyderabad and Chennai. Please confirm which is current.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "639cf6270fbd4d9b",
+        "3c4739247b5e41e3"
+      ],
+      "latency_ms": 0.66,
+      "error": null
+    },
+    {
+      "id": "natural-ambiguous-1-q2",
+      "category": "ambiguous",
+      "method": "context",
+      "turns": [
+        "I live in Hyderabad. I work for Meridian.",
+        "I'm not certain, but I might be living in Chennai now. Please don't treat that as confirmed."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "639cf6270fbd4d9b",
+        "cc90e53d12784ab6"
+      ],
+      "latency_ms": 6218.03,
+      "error": null
+    },
+    {
+      "id": "natural-ambiguous-1-q2",
+      "category": "ambiguous",
+      "method": "vector",
+      "turns": [
+        "I live in Hyderabad. I work for Meridian.",
+        "I'm not certain, but I might be living in Chennai now. Please don't treat that as confirmed."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "cc90e53d12784ab6"
+      ],
+      "latency_ms": 5553.81,
+      "error": null
+    },
+    {
+      "id": "natural-ambiguous-1-q2",
+      "category": "ambiguous",
+      "method": "graph",
+      "turns": [
+        "I live in Hyderabad. I work for Meridian.",
+        "I'm not certain, but I might be living in Chennai now. Please don't treat that as confirmed."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "cc90e53d12784ab6"
+      ],
+      "latency_ms": 0.63,
+      "error": null
+    },
+    {
+      "id": "natural-ambiguous-1-q2",
+      "category": "ambiguous",
+      "method": "hybrid",
+      "turns": [
+        "I live in Hyderabad. I work for Meridian.",
+        "I'm not certain, but I might be living in Chennai now. Please don't treat that as confirmed."
+      ],
+      "question": "Who is my employer?",
+      "expected": "Meridian",
+      "actual": "Meridian",
+      "answer": "Your employer is Meridian.",
+      "correct": true,
+      "stale": false,
+      "used_ids": [
+        "cc90e53d12784ab6"
+      ],
+      "latency_ms": 7590.68,
+      "error": null
+    }
+  ],
+  "extraction_records": [
+    {
+      "case": "natural-stable-1",
+      "turn_index": 0,
+      "turn": "For your notes, my birthday falls on 14 May. I work for Meridian.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "2349a68f1ab24307",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "birthday",
+          "value": "14 May",
+          "scope": ""
+        },
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "447671cf354f4b04",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "birthday",
+          "value": "14 May",
+          "intent": "assert",
+          "scope": ""
+        },
+        {
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-stable-1",
+      "turn_index": 1,
+      "turn": "Just confirming that my birthday is still 14 May.",
+      "predicted": [
+        {
+          "label": "SUPPORTS",
+          "reason": "Additional evidence supports the existing assertion.",
+          "fact_id": "2349a68f1ab24307",
+          "existing_id": "2349a68f1ab24307",
+          "subject": "You",
+          "relation": "birthday",
+          "value": "14 May",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "birthday",
+          "value": "14 May",
+          "intent": "support",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "SUPPORTS"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-preference-1",
+      "turn_index": 0,
+      "turn": "My preferred programming language is Python. Coffee is my favourite drink.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "5c53218ea8a54575",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "prefers",
+          "value": "Python",
+          "scope": "programming_language"
+        },
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "efdba60bccaa41f6",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "prefers",
+          "value": "Coffee",
+          "scope": "beverage"
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "prefers",
+          "value": "Python",
+          "intent": "assert",
+          "scope": "programming_language"
+        },
+        {
+          "subject": "You",
+          "relation": "prefers",
+          "value": "coffee",
+          "intent": "assert",
+          "scope": "beverage"
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-preference-1",
+      "turn_index": 1,
+      "turn": "I've switched to Rust as my preferred programming language. My drink preference hasn't changed.",
+      "predicted": [
+        {
+          "label": "SUPERSEDES",
+          "reason": "An explicit change replaces the previous current value, preserving its history.",
+          "fact_id": "87b427ace33b438c",
+          "existing_id": "5c53218ea8a54575",
+          "subject": "You",
+          "relation": "prefers",
+          "value": "Rust",
+          "scope": "programming_language"
+        },
+        {
+          "label": "SUPPORTS",
+          "reason": "Additional evidence supports the existing assertion.",
+          "fact_id": "efdba60bccaa41f6",
+          "existing_id": "efdba60bccaa41f6",
+          "subject": "You",
+          "relation": "prefers",
+          "value": "Coffee",
+          "scope": "beverage"
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "prefers",
+          "value": "Rust",
+          "intent": "update",
+          "scope": "programming_language"
+        },
+        {
+          "subject": "You",
+          "relation": "prefers",
+          "value": "coffee",
+          "intent": "support",
+          "scope": "beverage"
+        }
+      ],
+      "gold_labels": [
+        "SUPERSEDES",
+        "SUPPORTS"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-location-1",
+      "turn_index": 0,
+      "turn": "Home for me is Hyderabad. I'm employed by Meridian.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "f3d49abc0114418f",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "lives_in",
+          "value": "Hyderabad",
+          "scope": ""
+        },
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "5931a123b6e144a3",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "lives_in",
+          "value": "Hyderabad",
+          "intent": "assert",
+          "scope": ""
+        },
+        {
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-location-1",
+      "turn_index": 1,
+      "turn": "I've relocated to Chennai; that's my permanent home now.",
+      "predicted": [
+        {
+          "label": "SUPERSEDES",
+          "reason": "An explicit change replaces the previous current value, preserving its history.",
+          "fact_id": "e6d1a01c87754d9f",
+          "existing_id": "f3d49abc0114418f",
+          "subject": "You",
+          "relation": "lives_in",
+          "value": "Chennai",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "lives_in",
+          "value": "Chennai",
+          "intent": "update",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "SUPERSEDES"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-correction-1",
+      "turn_index": 0,
+      "turn": "Please remember: my meeting is scheduled for Tuesday. I work at Meridian.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "601c19c1cbda4063",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "meeting_day",
+          "value": "Tuesday",
+          "scope": ""
+        },
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "530635f735534a4a",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "meeting_day",
+          "value": "Tuesday",
+          "intent": "assert",
+          "scope": ""
+        },
+        {
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-correction-1",
+      "turn_index": 1,
+      "turn": "I gave you the wrong meeting day earlier. The correct day is Wednesday.",
+      "predicted": [
+        {
+          "label": "UPDATES",
+          "reason": "An explicit correction invalidates the previous value in this relation.",
+          "fact_id": "d213c0b4e21247fc",
+          "existing_id": "601c19c1cbda4063",
+          "subject": "You",
+          "relation": "meeting_day",
+          "value": "Wednesday",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "meeting_day",
+          "value": "Wednesday",
+          "intent": "correct",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UPDATES"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-cancellation-1",
+      "turn_index": 0,
+      "turn": "I'm planning a trip to Hyderabad. My employer is Meridian.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "d5b112d2270146b0",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "plans_to",
+          "value": "trip to Hyderabad",
+          "scope": ""
+        },
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "2ec935fca3504bba",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "plans_to",
+          "value": "Hyderabad",
+          "intent": "assert",
+          "scope": ""
+        },
+        {
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-cancellation-1",
+      "turn_index": 1,
+      "turn": "I've called off the trip to Hyderabad. It isn't happening.",
+      "predicted": [
+        {
+          "label": "SUPERSEDES",
+          "reason": "An explicit cancellation retires only the matching plan or possession.",
+          "fact_id": "b3e282e3a685486f",
+          "existing_id": "d5b112d2270146b0",
+          "subject": "You",
+          "relation": "plans_to",
+          "value": "trip to Hyderabad",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "plans_to",
+          "value": "Hyderabad",
+          "intent": "cancel",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "SUPERSEDES"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-replacement-1",
+      "turn_index": 0,
+      "turn": "My current phone is an iPhone. I also own a MacBook.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "b109352ae232491e",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "owns",
+          "value": "iPhone",
+          "scope": "phone"
+        },
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "424e46ada27e44ef",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "owns",
+          "value": "MacBook",
+          "scope": "laptop"
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "owns",
+          "value": "iPhone",
+          "intent": "assert",
+          "scope": ""
+        },
+        {
+          "subject": "You",
+          "relation": "owns",
+          "value": "MacBook",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-replacement-1",
+      "turn_index": 1,
+      "turn": "I've sold the iPhone and replaced it with a Pixel.",
+      "predicted": [
+        {
+          "label": "SUPERSEDES",
+          "reason": "An explicit cancellation retires only the matching plan or possession.",
+          "fact_id": "5a2f7b1d0eff4fca",
+          "existing_id": "b109352ae232491e",
+          "subject": "You",
+          "relation": "owns",
+          "value": "iPhone",
+          "scope": "phone"
+        },
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "c356782355e44ea9",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "owns",
+          "value": "Pixel",
+          "scope": "phone"
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "owns",
+          "value": "iPhone",
+          "intent": "cancel",
+          "scope": ""
+        },
+        {
+          "subject": "You",
+          "relation": "owns",
+          "value": "Pixel",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "SUPERSEDES",
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-temporary-1",
+      "turn_index": 0,
+      "turn": "I make my permanent home in Hyderabad.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "3c0035c75a33419b",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "lives_in",
+          "value": "Hyderabad",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "lives_in",
+          "value": "Hyderabad",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-temporary-1",
+      "turn_index": 1,
+      "turn": "I'm spending this week in Chennai, just for a temporary visit.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "77948fb732c34f74",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "temporary_location",
+          "value": "Chennai",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "temporary_location",
+          "value": "Chennai",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-additive-1",
+      "turn_index": 0,
+      "turn": "I'm on the payroll at Meridian.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "b2e22f922ca64a6f",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-additive-1",
+      "turn_index": 1,
+      "turn": "In addition to my job, I'm heading up Project Atlas.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "49bc6ae010e9452d",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "leads",
+          "value": "Project Atlas",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "leads",
+          "value": "Project Atlas",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-rename-1",
+      "turn_index": 0,
+      "turn": "We call my dog Bruno. I work at Meridian.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "7b85084addb3479a",
+          "existing_id": null,
+          "subject": "Your dog",
+          "relation": "name",
+          "value": "Bruno",
+          "scope": ""
+        },
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "db964021e2f8484d",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "Your dog",
+          "relation": "name",
+          "value": "Bruno",
+          "intent": "assert",
+          "scope": ""
+        },
+        {
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-rename-1",
+      "turn_index": 1,
+      "turn": "We've renamed my dog to Milo. It's the same dog, just a new name.",
+      "predicted": [
+        {
+          "label": "SUPERSEDES",
+          "reason": "An explicit change replaces the previous current value, preserving its history.",
+          "fact_id": "e7e0ecc0aaf34ea9",
+          "existing_id": "7b85084addb3479a",
+          "subject": "Your dog",
+          "relation": "name",
+          "value": "Milo",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "Your dog",
+          "relation": "name",
+          "value": "Milo",
+          "intent": "update",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "SUPERSEDES"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-ambiguous-1",
+      "turn_index": 0,
+      "turn": "I live in Hyderabad. I work for Meridian.",
+      "predicted": [
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "639cf6270fbd4d9b",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "lives_in",
+          "value": "Hyderabad",
+          "scope": ""
+        },
+        {
+          "label": "UNRELATED",
+          "reason": "A compatible fact was added without retiring other relations.",
+          "fact_id": "cc90e53d12784ab6",
+          "existing_id": null,
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "lives_in",
+          "value": "Hyderabad",
+          "intent": "assert",
+          "scope": ""
+        },
+        {
+          "subject": "You",
+          "relation": "works_at",
+          "value": "Meridian",
+          "intent": "assert",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "UNRELATED",
+        "UNRELATED"
+      ],
+      "unsupported": []
+    },
+    {
+      "case": "natural-ambiguous-1",
+      "turn_index": 1,
+      "turn": "I'm not certain, but I might be living in Chennai now. Please don't treat that as confirmed.",
+      "predicted": [
+        {
+          "label": "CONTRADICTS",
+          "reason": "Incompatible evidence is uncertain; both possibilities need clarification.",
+          "fact_id": "3c4739247b5e41e3",
+          "existing_id": "639cf6270fbd4d9b",
+          "subject": "You",
+          "relation": "lives_in",
+          "value": "Chennai",
+          "scope": ""
+        }
+      ],
+      "gold": [
+        {
+          "subject": "You",
+          "relation": "lives_in",
+          "value": "Chennai",
+          "intent": "uncertain",
+          "scope": ""
+        }
+      ],
+      "gold_labels": [
+        "CONTRADICTS"
+      ],
+      "unsupported": []
+    }
+  ],
+  "labels_evaluated": [
+    "SUPPORTS",
+    "UPDATES",
+    "CONTRADICTS",
+    "SUPERSEDES",
+    "UNRELATED"
+  ],
+  "absent_labels": [
+    "SAME"
+  ],
+  "provider_calls": 99,
+  "cache_hits": 12,
+  "measured_live_calls": 87,
+  "actual_input_tokens": 694950,
+  "actual_output_tokens": 4625,
+  "errors": [],
+  "limitations": [
+    "Curated internal set authored with explicit gold annotations; not a blind external or third-party human benchmark.",
+    "The live set does not exercise SAME transitions; that label is evaluated in the gold-input policy suite.",
+    "Only 20 or 60 questions; results have substantial sampling uncertainty and are not general-performance claims.",
+    "All methods share the same live extractor and LLM reader. The full-context baseline receives raw user turns.",
+    "Vector and graph methods do not receive reconciliation states; hybrid does. Graph uses personalized PageRank.",
+    "Retrieval uses K=3; the legacy recall_at_5 field is retained for UI compatibility and must be labeled Recall@3 for this suite.",
+    "Latency includes model inference and embedding-cache reads. Cache-hit counts are reported; cached calls are not cold inference measurements.",
+    "Answer values are normalized exact matches with declared gold aliases. No unreported model judge is used.",
+    "Model errors count as incorrect answers. Negative/cancellation evidence remains auditable."
+  ]
+}

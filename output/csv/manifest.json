@@ -1,0 +1,59 @@
+{
+  "exported_at": "2026-10-20T05:36:07.924Z",
+  "exports": [
+    {
+      "filename": "metrics-summary.csv",
+      "records": 14,
+      "columns": 17
+    },
+    {
+      "filename": "run-summary.csv",
+      "records": 3,
+      "columns": 28
+    },
+    {
+      "filename": "answer-records.csv",
+      "records": 320,
+      "columns": 16
+    },
+    {
+      "filename": "extraction-audit.csv",
+      "records": 80,
+      "columns": 10
+    },
+    {
+      "filename": "reconciliation-by-label.csv",
+      "records": 18,
+      "columns": 10
+    },
+    {
+      "filename": "category-results.csv",
+      "records": 140,
+      "columns": 7
+    },
+    {
+      "filename": "automated-tests.csv",
+      "records": 63,
+      "columns": 4
+    }
+  ],
+  "sources": [
+    {
+      "source": "output/evaluation-policy.json",
+      "sha256": "928268e4bf7fb84ace6999ba1ad93f3c4d4d0b24e322270e368f9ed0ed209ffb"
+    },
+    {
+      "source": "output/evaluation-ollama-final.json",
+      "sha256": "8f2f72ea9de7c90f5457ace778240980bf51da4c0ad621c4ca989acec1834642"
+    },
+    {
+      "source": "output/evaluation-codex.json",
+      "sha256": "971bbceba06b3c3fa1eb8dfbf8b3b2608fc3f924cf9d7d3910e8f57b7dbb5f75"
+    },
+    {
+      "source": "output/test-results.txt",
+      "sha256": "5cb02b85999026d07f06005f8661a2a222db100c8e707df62841674b3e6c2302"
+    }
+  ],
+  "note": "Exports of saved results; no experiments rerun."
+}

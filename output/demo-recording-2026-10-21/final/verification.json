@@ -1,0 +1,75 @@
+{
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "embedding_model": "nomic-embed-text:latest",
+  "synthetic_demo": true,
+  "workspace_id": "ff406c7cd5f14190",
+  "source": "Actual application viewport recording via Chrome DevTools screencast",
+  "audio": false,
+  "speed": "1x frame timestamps; final still held for 3 seconds",
+  "results": {
+    "current_facts": [
+      "Chennai",
+      "Rust",
+      "Meridian",
+      "Project Atlas",
+      "Tea"
+    ],
+    "superseded_facts": [
+      "Hyderabad",
+      "Python"
+    ],
+    "invalid_facts": [
+      "Pune"
+    ],
+    "sessions": 4,
+    "final_answer": "You live in Chennai."
+  },
+  "chapters": [
+    {
+      "stage": "initial memories saved",
+      "seconds": 6.22
+    },
+    {
+      "stage": "Chennai and Rust current; Hyderabad and Python historical",
+      "seconds": 29.62
+    },
+    {
+      "stage": "Three live retrieval answers: Chennai",
+      "seconds": 70.52
+    },
+    {
+      "stage": "Five compatible current facts",
+      "seconds": 91.53
+    },
+    {
+      "stage": "Clarification requested for Chennai/Pune",
+      "seconds": 105.0
+    },
+    {
+      "stage": "Confirmed Chennai; real model answer returned",
+      "seconds": 124.66
+    }
+  ],
+  "notes": [
+    "Clean take completed without displayed inference errors.",
+    "Earlier GPT-5.6-Sol attempt hit 429 rate limits and is retained separately.",
+    "GPT-6.1-Sol was rejected by the installed Codex CLI; no configuration was changed for that probe.",
+    "Active app model is now GPT-5.6-Luna, using the same Codex login.",
+    "Existing benchmark results were not regenerated or relabeled."
+  ],
+  "video": {
+    "file": "Amnesia-live-demo.mp4",
+    "duration_seconds": 138.866667,
+    "width": 934,
+    "height": 1080,
+    "fps": 30,
+    "bytes": 2162462,
+    "sha256": "565c8ea0768222efaf8ab554c2d34678c0e5b37d4e72a164460ce48ab5aef5e1",
+    "visual_check_seconds": [
+      1,
+      72,
+      132
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+check,status,evidence
+python_regression_suite,passed,77 tests; includes mocked provider failures and real HTTP ingestion replay
+ui_recovery_helpers,passed,4 Node tests including lost responses and confirmation saved before answer failure
+production_build,passed,TypeScript and Vite
+launcher_embedding_recovery,passed,Started missing Ollama on port 11435 while reusing existing Amnesia server
+live_initial_extraction,passed,Hyderabad and Python extracted through Codex login
+live_scoped_update,passed,Chennai and Rust current; Hyderabad and Python superseded
+live_three_method_retrieval,passed,"Hybrid, vector top-1, and context answered Chennai; resumed after provider 429"
+live_compatible_fact_preservation,passed,"Meridian, Project Atlas and Tea added; Chennai and Rust preserved"
+live_uncertainty,passed,Chennai/Pune unresolved; explicit clarification returned
+live_confirmation_commit,passed,Chennai current; Pune invalid; five current facts and four sessions
+live_post_confirmation_answer,blocked,Codex returned 429 on bounded attempts and a later studio query; saved graph intact
+new_confirmation_answer_retry,passed_unit_only,New helper prevents repeated save after an answer failure; added after live failure exposed issue

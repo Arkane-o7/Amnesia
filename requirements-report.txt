@@ -1,0 +1,4 @@
+# Optional only: the application backend itself has no pip dependencies.
+reportlab>=4.4,<5
+Pillow>=10,<13
+pypdf>=6,<7

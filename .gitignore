@@ -1,0 +1,56 @@
+node_modules/
+dist/
+.amnesia/
+__pycache__/
+*.pyc
+.env
+output/playwright/
+.playwright-cli/
+*.tsbuildinfo
+
+.amnesia-preview/
+release/
+.venv/
+
+# Local credentials, databases, and temporary authoring files
+.DS_Store
+.env.*
+!.env.example
+credentials.json
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+.amnesia-*/
+.chart-data-*/
+tmp/
+/ChatGPT Image *.png
+
+# Keep reproducible results and final review artifacts, not intermediate captures
+output/*
+!output/evaluation-policy.json
+!output/evaluation-policy.jsonl
+!output/evaluation-codex.json
+!output/evaluation-codex.jsonl
+!output/evaluation-ollama-final.json
+!output/evaluation-ollama-final.jsonl
+!output/csv/
+!output/pdf/
+!output/presentation/
+output/presentation/Amnesia-Final-Review-v2.pptx
+!output/reliability-2026-10-21/
+output/reliability-2026-10-21/server.log
+!output/demo-recording-2026-10-21/
+output/demo-recording-2026-10-21/*
+!output/demo-recording-2026-10-21/final/
+output/demo-recording-2026-10-21/final/*
+!output/demo-recording-2026-10-21/final/Amnesia-live-demo.mp4
+!output/demo-recording-2026-10-21/final/verification.json
+!output/demo-recording-2026-10-21/final/workspace.json
+!output/demo-recording-2026-10-21/final/markers.json
+!output/demo-recording-2026-10-21/final/final-state.jpg
+
+# Large review assets are uploaded separately.
+output/presentation/Amnesia-Final-Review-Editorial.pptx
+output/presentation/editorial-assets/selection.png
+output/presentation/editorial-assets/uncertainty.png

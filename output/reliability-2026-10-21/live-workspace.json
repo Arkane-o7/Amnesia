@@ -1,0 +1,871 @@
+{
+  "workspace": {
+    "id": "73036c0cd84f44ff",
+    "name": "Final review \u00b7 10/21/2026",
+    "created_at": "2026-10-21T03:12:31.880821+00:00"
+  },
+  "sessions": [
+    {
+      "id": "f6e21e3320734aa2",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Session 01",
+      "created_at": "2026-10-21T03:12:31.882837+00:00"
+    },
+    {
+      "id": "16cfddbe8bf74ff9",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Session 02",
+      "created_at": "2026-10-21T03:13:25.473726+00:00"
+    },
+    {
+      "id": "bdd9913c919a44ed",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Session 03",
+      "created_at": "2026-10-21T03:19:19.274075+00:00"
+    },
+    {
+      "id": "9b074cb9be2f48a8",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Session 04",
+      "created_at": "2026-10-21T03:20:23.672517+00:00"
+    }
+  ],
+  "facts": [
+    {
+      "id": "5363f074e0324343",
+      "workspace_id": "73036c0cd84f44ff",
+      "subject_id": "3ec24cd164264823",
+      "subject": "You",
+      "relation": "lives_in",
+      "object_id": "12791f77afdc47a2",
+      "value": "Hyderabad",
+      "valid_from": "2026-10-21T03:12:31.891758+00:00",
+      "valid_until": "2026-10-21T03:13:25.473726+00:00",
+      "observed_at": "2026-10-21T03:12:31.891758+00:00",
+      "evidence": "I make my home in Hyderabad",
+      "event_id": "ec4b9311543d4f78",
+      "confidence": 0.99,
+      "status": "superseded",
+      "superseded_by": "707fbf19b865467a",
+      "scope": "",
+      "intent": "assert",
+      "original_valid_until": null,
+      "history": [
+        {
+          "seq": 39,
+          "fact_id": "5363f074e0324343",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "active",
+          "valid_until": null,
+          "superseded_by": null,
+          "observed_at": "2026-10-21T03:12:31.891758+00:00",
+          "reason": "Initial evidence."
+        },
+        {
+          "seq": 42,
+          "fact_id": "5363f074e0324343",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "superseded",
+          "valid_until": "2026-10-21T03:13:25.473726+00:00",
+          "superseded_by": "707fbf19b865467a",
+          "observed_at": "2026-10-21T03:13:25.473726+00:00",
+          "reason": "An explicit change replaces the previous current value, preserving its history."
+        }
+      ],
+      "evidence_count": 1,
+      "effective_status": "superseded"
+    },
+    {
+      "id": "50ad8dd231b04be5",
+      "workspace_id": "73036c0cd84f44ff",
+      "subject_id": "3ec24cd164264823",
+      "subject": "You",
+      "relation": "prefers",
+      "object_id": "5273b2477c814efa",
+      "value": "Python",
+      "valid_from": "2026-10-21T03:12:31.891758+00:00",
+      "valid_until": "2026-10-21T03:13:25.473726+00:00",
+      "observed_at": "2026-10-21T03:12:31.891758+00:00",
+      "evidence": "Python is my preferred programming language",
+      "event_id": "ec4b9311543d4f78",
+      "confidence": 0.99,
+      "status": "superseded",
+      "superseded_by": "60191d7c62204c62",
+      "scope": "programming_language",
+      "intent": "assert",
+      "original_valid_until": null,
+      "history": [
+        {
+          "seq": 40,
+          "fact_id": "50ad8dd231b04be5",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "active",
+          "valid_until": null,
+          "superseded_by": null,
+          "observed_at": "2026-10-21T03:12:31.891758+00:00",
+          "reason": "Initial evidence."
+        },
+        {
+          "seq": 44,
+          "fact_id": "50ad8dd231b04be5",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "superseded",
+          "valid_until": "2026-10-21T03:13:25.473726+00:00",
+          "superseded_by": "60191d7c62204c62",
+          "observed_at": "2026-10-21T03:13:25.473726+00:00",
+          "reason": "An explicit change replaces the previous current value, preserving its history."
+        }
+      ],
+      "evidence_count": 1,
+      "effective_status": "superseded"
+    },
+    {
+      "id": "707fbf19b865467a",
+      "workspace_id": "73036c0cd84f44ff",
+      "subject_id": "3ec24cd164264823",
+      "subject": "You",
+      "relation": "lives_in",
+      "object_id": "56fb3d5c81974297",
+      "value": "Chennai",
+      "valid_from": "2026-10-21T03:13:25.473726+00:00",
+      "valid_until": null,
+      "observed_at": "2026-10-21T03:13:25.473726+00:00",
+      "evidence": "I've relocated to Chennai.",
+      "event_id": "2da8f51e8f454ed4",
+      "confidence": 0.99,
+      "status": "active",
+      "superseded_by": null,
+      "scope": "",
+      "intent": "update",
+      "original_valid_until": null,
+      "history": [
+        {
+          "seq": 41,
+          "fact_id": "707fbf19b865467a",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "active",
+          "valid_until": null,
+          "superseded_by": null,
+          "observed_at": "2026-10-21T03:13:25.473726+00:00",
+          "reason": "Initial evidence."
+        },
+        {
+          "seq": 49,
+          "fact_id": "707fbf19b865467a",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "unresolved",
+          "valid_until": null,
+          "superseded_by": null,
+          "observed_at": "2026-10-21T03:20:23.672517+00:00",
+          "reason": "Incompatible evidence is uncertain; both possibilities need clarification."
+        },
+        {
+          "seq": 50,
+          "fact_id": "707fbf19b865467a",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "active",
+          "valid_until": null,
+          "superseded_by": null,
+          "observed_at": "2026-10-21T03:21:01.506376+00:00",
+          "reason": "The user explicitly confirmed this value and resolved the scoped conflict."
+        }
+      ],
+      "evidence_count": 2,
+      "effective_status": "active"
+    },
+    {
+      "id": "60191d7c62204c62",
+      "workspace_id": "73036c0cd84f44ff",
+      "subject_id": "3ec24cd164264823",
+      "subject": "You",
+      "relation": "prefers",
+      "object_id": "e1bf43feac064f66",
+      "value": "Rust",
+      "valid_from": "2026-10-21T03:13:25.473726+00:00",
+      "valid_until": null,
+      "observed_at": "2026-10-21T03:13:25.473726+00:00",
+      "evidence": "I now prefer Rust for programming.",
+      "event_id": "2da8f51e8f454ed4",
+      "confidence": 0.99,
+      "status": "active",
+      "superseded_by": null,
+      "scope": "programming_language",
+      "intent": "update",
+      "original_valid_until": null,
+      "history": [
+        {
+          "seq": 43,
+          "fact_id": "60191d7c62204c62",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "active",
+          "valid_until": null,
+          "superseded_by": null,
+          "observed_at": "2026-10-21T03:13:25.473726+00:00",
+          "reason": "Initial evidence."
+        }
+      ],
+      "evidence_count": 1,
+      "effective_status": "active"
+    },
+    {
+      "id": "4d57de70120e4bcb",
+      "workspace_id": "73036c0cd84f44ff",
+      "subject_id": "3ec24cd164264823",
+      "subject": "You",
+      "relation": "works_at",
+      "object_id": "3bf8be00c4474331",
+      "value": "Meridian",
+      "valid_from": "2026-10-21T03:19:19.274075+00:00",
+      "valid_until": null,
+      "observed_at": "2026-10-21T03:19:19.274075+00:00",
+      "evidence": "I work at Meridian.",
+      "event_id": "6e497ebcaf86445f",
+      "confidence": 0.98,
+      "status": "active",
+      "superseded_by": null,
+      "scope": "",
+      "intent": "assert",
+      "original_valid_until": null,
+      "history": [
+        {
+          "seq": 45,
+          "fact_id": "4d57de70120e4bcb",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "active",
+          "valid_until": null,
+          "superseded_by": null,
+          "observed_at": "2026-10-21T03:19:19.274075+00:00",
+          "reason": "Initial evidence."
+        }
+      ],
+      "evidence_count": 1,
+      "effective_status": "active"
+    },
+    {
+      "id": "7f76163c1607477d",
+      "workspace_id": "73036c0cd84f44ff",
+      "subject_id": "3ec24cd164264823",
+      "subject": "You",
+      "relation": "leads",
+      "object_id": "6630e6a57f4b4aac",
+      "value": "Project Atlas",
+      "valid_from": "2026-10-21T03:19:19.274075+00:00",
+      "valid_until": null,
+      "observed_at": "2026-10-21T03:19:19.274075+00:00",
+      "evidence": "I lead Project Atlas.",
+      "event_id": "6e497ebcaf86445f",
+      "confidence": 0.98,
+      "status": "active",
+      "superseded_by": null,
+      "scope": "",
+      "intent": "assert",
+      "original_valid_until": null,
+      "history": [
+        {
+          "seq": 46,
+          "fact_id": "7f76163c1607477d",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "active",
+          "valid_until": null,
+          "superseded_by": null,
+          "observed_at": "2026-10-21T03:19:19.274075+00:00",
+          "reason": "Initial evidence."
+        }
+      ],
+      "evidence_count": 1,
+      "effective_status": "active"
+    },
+    {
+      "id": "cec3a669fd644829",
+      "workspace_id": "73036c0cd84f44ff",
+      "subject_id": "3ec24cd164264823",
+      "subject": "You",
+      "relation": "prefers",
+      "object_id": "033722e864264157",
+      "value": "Tea",
+      "valid_from": "2026-10-21T03:19:19.274075+00:00",
+      "valid_until": null,
+      "observed_at": "2026-10-21T03:19:19.274075+00:00",
+      "evidence": "Tea is my favourite drink.",
+      "event_id": "6e497ebcaf86445f",
+      "confidence": 0.98,
+      "status": "active",
+      "superseded_by": null,
+      "scope": "beverage",
+      "intent": "assert",
+      "original_valid_until": null,
+      "history": [
+        {
+          "seq": 47,
+          "fact_id": "cec3a669fd644829",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "active",
+          "valid_until": null,
+          "superseded_by": null,
+          "observed_at": "2026-10-21T03:19:19.274075+00:00",
+          "reason": "Initial evidence."
+        }
+      ],
+      "evidence_count": 1,
+      "effective_status": "active"
+    },
+    {
+      "id": "1a7540e3bad540ac",
+      "workspace_id": "73036c0cd84f44ff",
+      "subject_id": "3ec24cd164264823",
+      "subject": "You",
+      "relation": "lives_in",
+      "object_id": "156db53b9e0d404a",
+      "value": "Pune",
+      "valid_from": "2026-10-21T03:20:23.672517+00:00",
+      "valid_until": "2026-10-21T03:21:01.506376+00:00",
+      "observed_at": "2026-10-21T03:20:23.672517+00:00",
+      "evidence": "I might be living in Pune now.",
+      "event_id": "53ac7a229b1949db",
+      "confidence": 0.45,
+      "status": "invalid",
+      "superseded_by": "707fbf19b865467a",
+      "scope": "",
+      "intent": "uncertain",
+      "original_valid_until": null,
+      "history": [
+        {
+          "seq": 48,
+          "fact_id": "1a7540e3bad540ac",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "unresolved",
+          "valid_until": null,
+          "superseded_by": null,
+          "observed_at": "2026-10-21T03:20:23.672517+00:00",
+          "reason": "Initial evidence."
+        },
+        {
+          "seq": 51,
+          "fact_id": "1a7540e3bad540ac",
+          "workspace_id": "73036c0cd84f44ff",
+          "status": "invalid",
+          "valid_until": "2026-10-21T03:21:01.506376+00:00",
+          "superseded_by": "707fbf19b865467a",
+          "observed_at": "2026-10-21T03:21:01.506376+00:00",
+          "reason": "The user explicitly confirmed this value and resolved the scoped conflict."
+        }
+      ],
+      "evidence_count": 1,
+      "effective_status": "invalid"
+    }
+  ],
+  "entities": [
+    {
+      "id": "56fb3d5c81974297",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Chennai",
+      "canonical": "chennai"
+    },
+    {
+      "id": "12791f77afdc47a2",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Hyderabad",
+      "canonical": "hyderabad"
+    },
+    {
+      "id": "3bf8be00c4474331",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Meridian",
+      "canonical": "meridian"
+    },
+    {
+      "id": "6630e6a57f4b4aac",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Project Atlas",
+      "canonical": "project atlas"
+    },
+    {
+      "id": "156db53b9e0d404a",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Pune",
+      "canonical": "pune"
+    },
+    {
+      "id": "5273b2477c814efa",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Python",
+      "canonical": "python"
+    },
+    {
+      "id": "e1bf43feac064f66",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Rust",
+      "canonical": "rust"
+    },
+    {
+      "id": "033722e864264157",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "Tea",
+      "canonical": "tea"
+    },
+    {
+      "id": "3ec24cd164264823",
+      "workspace_id": "73036c0cd84f44ff",
+      "name": "You",
+      "canonical": "you"
+    }
+  ],
+  "events": [
+    {
+      "id": "ec4b9311543d4f78",
+      "workspace_id": "73036c0cd84f44ff",
+      "session_id": "f6e21e3320734aa2",
+      "role": "user",
+      "text": "I make my home in Hyderabad. Python is my preferred programming language.",
+      "observed_at": "2026-10-21T03:12:31.891758+00:00",
+      "result": {
+        "assertions": 2,
+        "decisions": [
+          {
+            "label": "UNRELATED",
+            "reason": "A compatible fact was added without retiring other relations.",
+            "fact_id": "5363f074e0324343",
+            "existing_id": null,
+            "subject": "You",
+            "relation": "lives_in",
+            "value": "Hyderabad",
+            "scope": ""
+          },
+          {
+            "label": "UNRELATED",
+            "reason": "A compatible fact was added without retiring other relations.",
+            "fact_id": "50ad8dd231b04be5",
+            "existing_id": null,
+            "subject": "You",
+            "relation": "prefers",
+            "value": "Python",
+            "scope": "programming_language"
+          }
+        ],
+        "unsupported": [],
+        "provider": "codex \u00b7 gpt-5.6-sol",
+        "latency_ms": 5498.94,
+        "pipeline": {
+          "extraction_ms": 5498.33,
+          "reconciliation_ms": 0.32
+        },
+        "aliases": []
+      }
+    },
+    {
+      "id": "2da8f51e8f454ed4",
+      "workspace_id": "73036c0cd84f44ff",
+      "session_id": "16cfddbe8bf74ff9",
+      "role": "user",
+      "text": "I've relocated to Chennai. I now prefer Rust for programming.",
+      "observed_at": "2026-10-21T03:13:25.473726+00:00",
+      "result": {
+        "assertions": 2,
+        "decisions": [
+          {
+            "label": "SUPERSEDES",
+            "reason": "An explicit change replaces the previous current value, preserving its history.",
+            "fact_id": "707fbf19b865467a",
+            "existing_id": "5363f074e0324343",
+            "subject": "You",
+            "relation": "lives_in",
+            "value": "Chennai",
+            "scope": ""
+          },
+          {
+            "label": "SUPERSEDES",
+            "reason": "An explicit change replaces the previous current value, preserving its history.",
+            "fact_id": "60191d7c62204c62",
+            "existing_id": "50ad8dd231b04be5",
+            "subject": "You",
+            "relation": "prefers",
+            "value": "Rust",
+            "scope": "programming_language"
+          }
+        ],
+        "unsupported": [],
+        "provider": "codex \u00b7 gpt-5.6-sol",
+        "latency_ms": 7378.62,
+        "pipeline": {
+          "extraction_ms": 7378.06,
+          "reconciliation_ms": 0.38
+        },
+        "aliases": []
+      }
+    },
+    {
+      "id": "6e497ebcaf86445f",
+      "workspace_id": "73036c0cd84f44ff",
+      "session_id": "bdd9913c919a44ed",
+      "role": "user",
+      "text": "I work at Meridian. I lead Project Atlas. Tea is my favourite drink.",
+      "observed_at": "2026-10-21T03:19:19.274075+00:00",
+      "result": {
+        "assertions": 3,
+        "decisions": [
+          {
+            "label": "UNRELATED",
+            "reason": "A compatible fact was added without retiring other relations.",
+            "fact_id": "4d57de70120e4bcb",
+            "existing_id": null,
+            "subject": "You",
+            "relation": "works_at",
+            "value": "Meridian",
+            "scope": ""
+          },
+          {
+            "label": "UNRELATED",
+            "reason": "A compatible fact was added without retiring other relations.",
+            "fact_id": "7f76163c1607477d",
+            "existing_id": null,
+            "subject": "You",
+            "relation": "leads",
+            "value": "Project Atlas",
+            "scope": ""
+          },
+          {
+            "label": "UNRELATED",
+            "reason": "A compatible fact was added without retiring other relations.",
+            "fact_id": "cec3a669fd644829",
+            "existing_id": null,
+            "subject": "You",
+            "relation": "prefers",
+            "value": "Tea",
+            "scope": "beverage"
+          }
+        ],
+        "unsupported": [],
+        "provider": "codex \u00b7 gpt-5.6-sol",
+        "latency_ms": 7175.47,
+        "pipeline": {
+          "extraction_ms": 7173.8,
+          "reconciliation_ms": 1.14
+        },
+        "aliases": []
+      }
+    },
+    {
+      "id": "53ac7a229b1949db",
+      "workspace_id": "73036c0cd84f44ff",
+      "session_id": "9b074cb9be2f48a8",
+      "role": "user",
+      "text": "I'm not certain, but I might be living in Pune now. Please don't treat it as a confirmed move.",
+      "observed_at": "2026-10-21T03:20:23.672517+00:00",
+      "result": {
+        "assertions": 1,
+        "decisions": [
+          {
+            "label": "CONTRADICTS",
+            "reason": "Incompatible evidence is uncertain; both possibilities need clarification.",
+            "fact_id": "1a7540e3bad540ac",
+            "existing_id": "707fbf19b865467a",
+            "subject": "You",
+            "relation": "lives_in",
+            "value": "Pune",
+            "scope": ""
+          }
+        ],
+        "unsupported": [],
+        "provider": "codex \u00b7 gpt-5.6-sol",
+        "latency_ms": 8338.04,
+        "pipeline": {
+          "extraction_ms": 8337.59,
+          "reconciliation_ms": 0.27
+        },
+        "aliases": []
+      }
+    },
+    {
+      "id": "8dda71d45c2a46f5",
+      "workspace_id": "73036c0cd84f44ff",
+      "session_id": "9b074cb9be2f48a8",
+      "role": "user",
+      "text": "Confirmed: my permanent home is Chennai. The possible move to Pune is not current.",
+      "observed_at": "2026-10-21T03:21:01.506376+00:00",
+      "result": {
+        "assertions": 1,
+        "decisions": [
+          {
+            "label": "UPDATES",
+            "reason": "The user explicitly confirmed this value and resolved the scoped conflict.",
+            "fact_id": "707fbf19b865467a",
+            "existing_id": null,
+            "subject": "You",
+            "relation": "lives_in",
+            "value": "Chennai",
+            "scope": ""
+          }
+        ],
+        "unsupported": [],
+        "provider": "user confirmation",
+        "latency_ms": 0
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "id": "c497b0b0afdf4340",
+      "workspace_id": "73036c0cd84f44ff",
+      "event_id": "ec4b9311543d4f78",
+      "fact_id": "5363f074e0324343",
+      "existing_id": null,
+      "label": "UNRELATED",
+      "reason": "A compatible fact was added without retiring other relations.",
+      "created_at": "2026-10-21T03:12:31.891758+00:00"
+    },
+    {
+      "id": "39d20c44b3214c03",
+      "workspace_id": "73036c0cd84f44ff",
+      "event_id": "ec4b9311543d4f78",
+      "fact_id": "50ad8dd231b04be5",
+      "existing_id": null,
+      "label": "UNRELATED",
+      "reason": "A compatible fact was added without retiring other relations.",
+      "created_at": "2026-10-21T03:12:31.891758+00:00"
+    },
+    {
+      "id": "5c9fe9fa82e843d1",
+      "workspace_id": "73036c0cd84f44ff",
+      "event_id": "2da8f51e8f454ed4",
+      "fact_id": "707fbf19b865467a",
+      "existing_id": "5363f074e0324343",
+      "label": "SUPERSEDES",
+      "reason": "An explicit change replaces the previous current value, preserving its history.",
+      "created_at": "2026-10-21T03:13:25.473726+00:00"
+    },
+    {
+      "id": "b12a6c54edab4464",
+      "workspace_id": "73036c0cd84f44ff",
+      "event_id": "2da8f51e8f454ed4",
+      "fact_id": "60191d7c62204c62",
+      "existing_id": "50ad8dd231b04be5",
+      "label": "SUPERSEDES",
+      "reason": "An explicit change replaces the previous current value, preserving its history.",
+      "created_at": "2026-10-21T03:13:25.473726+00:00"
+    },
+    {
+      "id": "5ee01be56ed14294",
+      "workspace_id": "73036c0cd84f44ff",
+      "event_id": "6e497ebcaf86445f",
+      "fact_id": "4d57de70120e4bcb",
+      "existing_id": null,
+      "label": "UNRELATED",
+      "reason": "A compatible fact was added without retiring other relations.",
+      "created_at": "2026-10-21T03:19:19.274075+00:00"
+    },
+    {
+      "id": "0b72c8c8573c4a39",
+      "workspace_id": "73036c0cd84f44ff",
+      "event_id": "6e497ebcaf86445f",
+      "fact_id": "7f76163c1607477d",
+      "existing_id": null,
+      "label": "UNRELATED",
+      "reason": "A compatible fact was added without retiring other relations.",
+      "created_at": "2026-10-21T03:19:19.274075+00:00"
+    },
+    {
+      "id": "4453e88f7f7e441c",
+      "workspace_id": "73036c0cd84f44ff",
+      "event_id": "6e497ebcaf86445f",
+      "fact_id": "cec3a669fd644829",
+      "existing_id": null,
+      "label": "UNRELATED",
+      "reason": "A compatible fact was added without retiring other relations.",
+      "created_at": "2026-10-21T03:19:19.274075+00:00"
+    },
+    {
+      "id": "c1f0950d924a4c54",
+      "workspace_id": "73036c0cd84f44ff",
+      "event_id": "53ac7a229b1949db",
+      "fact_id": "1a7540e3bad540ac",
+      "existing_id": "707fbf19b865467a",
+      "label": "CONTRADICTS",
+      "reason": "Incompatible evidence is uncertain; both possibilities need clarification.",
+      "created_at": "2026-10-21T03:20:23.672517+00:00"
+    },
+    {
+      "id": "4403ea307af342b8",
+      "workspace_id": "73036c0cd84f44ff",
+      "event_id": "8dda71d45c2a46f5",
+      "fact_id": "707fbf19b865467a",
+      "existing_id": null,
+      "label": "UPDATES",
+      "reason": "The user explicitly confirmed this value and resolved the scoped conflict.",
+      "created_at": "2026-10-21T03:21:01.506376+00:00"
+    }
+  ],
+  "as_of": "2026-10-21T03:21:06.696174+00:00",
+  "format": "amnesia.workspace",
+  "schema_version": 2,
+  "aliases": [],
+  "evidence_links": [
+    {
+      "fact_id": "7f76163c1607477d",
+      "event_id": "6e497ebcaf86445f"
+    },
+    {
+      "fact_id": "5363f074e0324343",
+      "event_id": "ec4b9311543d4f78"
+    },
+    {
+      "fact_id": "707fbf19b865467a",
+      "event_id": "2da8f51e8f454ed4"
+    },
+    {
+      "fact_id": "707fbf19b865467a",
+      "event_id": "8dda71d45c2a46f5"
+    },
+    {
+      "fact_id": "1a7540e3bad540ac",
+      "event_id": "53ac7a229b1949db"
+    },
+    {
+      "fact_id": "50ad8dd231b04be5",
+      "event_id": "ec4b9311543d4f78"
+    },
+    {
+      "fact_id": "60191d7c62204c62",
+      "event_id": "2da8f51e8f454ed4"
+    },
+    {
+      "fact_id": "cec3a669fd644829",
+      "event_id": "6e497ebcaf86445f"
+    },
+    {
+      "fact_id": "4d57de70120e4bcb",
+      "event_id": "6e497ebcaf86445f"
+    }
+  ],
+  "history": [
+    {
+      "seq": 39,
+      "fact_id": "5363f074e0324343",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "active",
+      "valid_until": null,
+      "superseded_by": null,
+      "observed_at": "2026-10-21T03:12:31.891758+00:00",
+      "reason": "Initial evidence."
+    },
+    {
+      "seq": 40,
+      "fact_id": "50ad8dd231b04be5",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "active",
+      "valid_until": null,
+      "superseded_by": null,
+      "observed_at": "2026-10-21T03:12:31.891758+00:00",
+      "reason": "Initial evidence."
+    },
+    {
+      "seq": 41,
+      "fact_id": "707fbf19b865467a",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "active",
+      "valid_until": null,
+      "superseded_by": null,
+      "observed_at": "2026-10-21T03:13:25.473726+00:00",
+      "reason": "Initial evidence."
+    },
+    {
+      "seq": 42,
+      "fact_id": "5363f074e0324343",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "superseded",
+      "valid_until": "2026-10-21T03:13:25.473726+00:00",
+      "superseded_by": "707fbf19b865467a",
+      "observed_at": "2026-10-21T03:13:25.473726+00:00",
+      "reason": "An explicit change replaces the previous current value, preserving its history."
+    },
+    {
+      "seq": 43,
+      "fact_id": "60191d7c62204c62",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "active",
+      "valid_until": null,
+      "superseded_by": null,
+      "observed_at": "2026-10-21T03:13:25.473726+00:00",
+      "reason": "Initial evidence."
+    },
+    {
+      "seq": 44,
+      "fact_id": "50ad8dd231b04be5",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "superseded",
+      "valid_until": "2026-10-21T03:13:25.473726+00:00",
+      "superseded_by": "60191d7c62204c62",
+      "observed_at": "2026-10-21T03:13:25.473726+00:00",
+      "reason": "An explicit change replaces the previous current value, preserving its history."
+    },
+    {
+      "seq": 45,
+      "fact_id": "4d57de70120e4bcb",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "active",
+      "valid_until": null,
+      "superseded_by": null,
+      "observed_at": "2026-10-21T03:19:19.274075+00:00",
+      "reason": "Initial evidence."
+    },
+    {
+      "seq": 46,
+      "fact_id": "7f76163c1607477d",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "active",
+      "valid_until": null,
+      "superseded_by": null,
+      "observed_at": "2026-10-21T03:19:19.274075+00:00",
+      "reason": "Initial evidence."
+    },
+    {
+      "seq": 47,
+      "fact_id": "cec3a669fd644829",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "active",
+      "valid_until": null,
+      "superseded_by": null,
+      "observed_at": "2026-10-21T03:19:19.274075+00:00",
+      "reason": "Initial evidence."
+    },
+    {
+      "seq": 48,
+      "fact_id": "1a7540e3bad540ac",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "unresolved",
+      "valid_until": null,
+      "superseded_by": null,
+      "observed_at": "2026-10-21T03:20:23.672517+00:00",
+      "reason": "Initial evidence."
+    },
+    {
+      "seq": 49,
+      "fact_id": "707fbf19b865467a",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "unresolved",
+      "valid_until": null,
+      "superseded_by": null,
+      "observed_at": "2026-10-21T03:20:23.672517+00:00",
+      "reason": "Incompatible evidence is uncertain; both possibilities need clarification."
+    },
+    {
+      "seq": 50,
+      "fact_id": "707fbf19b865467a",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "active",
+      "valid_until": null,
+      "superseded_by": null,
+      "observed_at": "2026-10-21T03:21:01.506376+00:00",
+      "reason": "The user explicitly confirmed this value and resolved the scoped conflict."
+    },
+    {
+      "seq": 51,
+      "fact_id": "1a7540e3bad540ac",
+      "workspace_id": "73036c0cd84f44ff",
+      "status": "invalid",
+      "valid_until": "2026-10-21T03:21:01.506376+00:00",
+      "superseded_by": "707fbf19b865467a",
+      "observed_at": "2026-10-21T03:21:01.506376+00:00",
+      "reason": "The user explicitly confirmed this value and resolved the scoped conflict."
+    }
+  ]
+}

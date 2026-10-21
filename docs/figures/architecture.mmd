@@ -1,0 +1,22 @@
+flowchart TD
+    U["Conversation sessions"] --> X["Structured AI extraction"]
+    X --> E["Entity resolution and preference scopes"]
+    E --> R["Six-way conservative reconciliation"]
+    R --> G[("SQLite temporal knowledge graph")]
+    R --> H["Provenance and lifecycle history"]
+    H --> G
+    Q["Cross-session question"] --> N["Memory necessity gate"]
+    N --> V["Dense semantic retrieval"]
+    N --> P["Personalized PageRank"]
+    G --> V
+    G --> P
+    V --> T["Hybrid ranking and temporal validity"]
+    P --> T
+    T --> C["Conflict guard and grounded LLM answer"]
+    C --> A["Answer with inspectable evidence"]
+    B["Gold policy and live AI evaluation"] -.-> R
+    B -.-> C
+    classDef ai fill:#f0ecff,stroke:#b6a8df,color:#57466f;
+    classDef storage fill:#edf6f1,stroke:#a7cab8,color:#48675a;
+    class X,V,P,C ai;
+    class G,H storage;

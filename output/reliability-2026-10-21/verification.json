@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-21",
+  "workspace_id": "73036c0cd84f44ff",
+  "provider": "codex",
+  "model": "gpt-5.6-sol",
+  "embeddings": "nomic-embed-text:latest",
+  "synthetic_demo": true,
+  "checks": [
+    {
+      "check": "python_regression_suite",
+      "status": "passed",
+      "evidence": "77 tests; includes mocked provider failures and real HTTP ingestion replay"
+    },
+    {
+      "check": "ui_recovery_helpers",
+      "status": "passed",
+      "evidence": "4 Node tests including lost responses and confirmation saved before answer failure"
+    },
+    {
+      "check": "production_build",
+      "status": "passed",
+      "evidence": "TypeScript and Vite"
+    },
+    {
+      "check": "launcher_embedding_recovery",
+      "status": "passed",
+      "evidence": "Started missing Ollama on port 11435 while reusing existing Amnesia server"
+    },
+    {
+      "check": "live_initial_extraction",
+      "status": "passed",
+      "evidence": "Hyderabad and Python extracted through Codex login"
+    },
+    {
+      "check": "live_scoped_update",
+      "status": "passed",
+      "evidence": "Chennai and Rust current; Hyderabad and Python superseded"
+    },
+    {
+      "check": "live_three_method_retrieval",
+      "status": "passed",
+      "evidence": "Hybrid, vector top-1, and context answered Chennai; resumed after provider 429"
+    },
+    {
+      "check": "live_compatible_fact_preservation",
+      "status": "passed",
+      "evidence": "Meridian, Project Atlas and Tea added; Chennai and Rust preserved"
+    },
+    {
+      "check": "live_uncertainty",
+      "status": "passed",
+      "evidence": "Chennai/Pune unresolved; explicit clarification returned"
+    },
+    {
+      "check": "live_confirmation_commit",
+      "status": "passed",
+      "evidence": "Chennai current; Pune invalid; five current facts and four sessions"
+    },
+    {
+      "check": "live_post_confirmation_answer",
+      "status": "blocked",
+      "evidence": "Codex returned 429 on bounded attempts and a later studio query; saved graph intact"
+    },
+    {
+      "check": "new_confirmation_answer_retry",
+      "status": "passed_unit_only",
+      "evidence": "New helper prevents repeated save after an answer failure; added after live failure exposed issue"
+    }
+  ],
+  "limitations": [
+    "The original failures had no retained diagnostics, so their exact cause is unproven.",
+    "Newly observed failures were HTTP 429 Too Many Requests from Codex.",
+    "No model/provider was switched; existing benchmark and presentation numbers were not changed.",
+    "No claim of general model accuracy or production reliability follows from these checks."
+  ]
+}
